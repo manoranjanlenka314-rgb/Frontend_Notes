@@ -1,0 +1,127 @@
+CSS (Cascading Style Sheets) is the backbone of modern web design, enabling developers to separate content from presentation, create responsive layouts, and deliver visually appealing user experiences. Mastery of CSS—including selectors, the box model, flexbox, grid, and animations—is essential for acing front-end interviews.
+
+📘 Long Summary of CSS
+Definition: CSS is a style sheet language used to describe the presentation of HTML or XML documents.
+
+Purpose: It controls layout, colors, fonts, spacing, and responsiveness across devices.
+
+Versions: CSS1 → CSS2 → CSS2.1 → CSS3 (modular, supports animations, transitions, responsive design).
+
+Advantages:
+
+Separation of content and design
+
+Easier maintenance and scalability
+
+Faster page loading (styles cached)
+
+Consistency across multiple pages
+
+Ways to Apply CSS:
+
+Inline (highest priority)
+
+Internal (embedded in <style> tag)
+
+External (linked .css file, most maintainable)
+
+Key Concepts:
+
+Selectors: Target HTML elements (.class, #id, element)
+
+Box Model: Content → Padding → Border → Margin
+
+Positioning: Static, relative, absolute, fixed, sticky
+
+Flexbox & Grid: Modern layout systems for responsive design
+
+Pseudo-classes & Pseudo-elements: :hover, :nth-child, ::before, ::after
+
+Media Queries: Enable responsive design
+
+Animations & Transitions: Smooth UI effects
+
+Frameworks: Bootstrap, Tailwind CSS, Foundation, Bulma, Materialize.
+
+Limitations: No logic or dynamic behavior (handled by JS), browser inconsistencies, limited vertical alignment in older versions.
+
+🎯 25 Interview-Based CSS Questions & Answers
+Basics
+What is CSS and why is it used?  
+CSS styles HTML elements, ensuring separation of content and design for maintainability.
+
+Difference between inline, internal, and external CSS?  
+Inline (highest priority, within element), internal (inside <style>), external (linked file, best practice).
+
+Explain the CSS box model.  
+Defines layout: content → padding → border → margin.
+
+What are pseudo-classes?  
+Special states of elements (:hover, :focus, :nth-child).
+
+What are pseudo-elements?  
+Style specific parts (::before, ::after, ::first-line).
+
+Selectors & Specificity
+Explain CSS specificity.  
+Inline > ID > Class/Attribute/Pseudo-class > Element.
+
+Difference between relative, absolute, fixed, and sticky positioning?  
+Relative (offset from normal), absolute (relative to nearest positioned ancestor), fixed (viewport), sticky (switches between relative/fixed).
+
+What is the difference between em, rem, and px units?  
+px = fixed pixels, em = relative to parent font-size, rem = relative to root font-size.
+
+What is the difference between inline, block, and inline-block elements?  
+Inline (no line break), block (new line, full width), inline-block (inline but allows width/height).
+
+Explain z-index.  
+Controls stacking order; higher values appear on top.
+
+Layouts
+What is Flexbox?  
+One-dimensional layout system for aligning items horizontally/vertically.
+
+What is CSS Grid?  
+Two-dimensional layout system for rows and columns.
+
+Difference between Flexbox and Grid?  
+Flexbox = 1D, Grid = 2D layouts.
+
+Explain media queries.  
+Used for responsive design (@media screen and (max-width: 768px)).
+
+What is the difference between relative units and absolute units?  
+Relative (em, %, rem) adapt; absolute (px, pt) fixed.
+
+Advanced
+What are transitions in CSS?  
+Smooth changes between property values (transition: all 0.3s ease).
+
+What are animations in CSS?  
+Keyframe-based effects (@keyframes).
+
+Difference between relative and transform: translate() for positioning?  
+relative shifts element in flow; translate moves without affecting layout.
+
+What is the difference between inline styles and !important?  
+Inline has high priority, but !important overrides all.
+
+Explain CSS variables.  
+Custom properties (--main-color: blue;).
+
+Practical & Performance
+What are CSS frameworks?  
+Prebuilt libraries (Bootstrap, Tailwind) for faster styling.
+
+How to optimize CSS performance?  
+Minify, use external files, avoid deep selectors, leverage caching.
+
+What is the difference between relative and absolute paths in CSS?  
+Relative depends on file location; absolute uses full URL.
+
+Explain responsive images in CSS.  
+Use max-width: 100% and height: auto.
+
+What are limitations of CSS?  
+No dynamic logic, browser inconsistencies, limited vertical alignment in older versions.
