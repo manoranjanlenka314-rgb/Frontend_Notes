@@ -1,0 +1,175 @@
+JavaScript is a high-level, interpreted programming language that powers interactivity on the web. It was created in 1995 by Brendan Eich and has since become one of the core technologies of the web, alongside HTML and CSS. Unlike HTML (structure) and CSS (style), JavaScript adds behavior and logic to web pages, enabling dynamic updates, animations, form validation, API calls, and much more.
+
+Key aspects:
+
+Execution Environment: Runs in browsers (via JavaScript engines like V8 in Chrome, SpiderMonkey in Firefox) and on servers (via Node.js).
+
+Paradigms: Supports procedural, object-oriented, and functional programming styles.
+
+Core Concepts:
+
+Variables (var, let, const)
+
+Data types (primitive vs. reference)
+
+Functions (regular, arrow, anonymous, higher-order)
+
+Objects and prototypes (basis of inheritance)
+
+DOM manipulation (document object model)
+
+Event handling (clicks, inputs, timers)
+
+Asynchronous programming (callbacks, promises, async/await)
+
+Modern Features: ES6 introduced classes, modules, template literals, destructuring, and more.
+
+Ecosystem: Vast libraries and frameworks (React, Angular, Vue) and runtime environments (Node.js) make JavaScript versatile beyond the browser.
+
+In short, JavaScript evolved from a simple scripting language into a full-fledged ecosystem that powers client-side interactivity, server-side applications, mobile apps, and even desktop software.
+
+🎯 25 Interview Questions with Detailed Answers
+1. What are the different data types in JavaScript?
+JavaScript has primitive types (string, number, boolean, null, undefined, symbol, bigint) and reference types (objects, arrays, functions). Primitive types are immutable and stored directly in memory, while reference types store memory addresses pointing to objects.
+
+2. Difference between var, let, and const?
+var: Function-scoped, allows redeclaration, hoisted with undefined.
+
+let: Block-scoped, cannot be redeclared in the same scope, hoisted but not initialized.
+
+const: Block-scoped, must be initialized, cannot be reassigned (though objects can be mutated).
+
+3. Explain hoisting in JavaScript.
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution. For example, functions declared with function are fully hoisted, while variables declared with var are hoisted but initialized as undefined.
+
+4. What is the difference between == and ===?
+==: Loose equality, performs type coercion before comparison.
+
+===: Strict equality, checks both value and type without coercion.
+Example: 5 == "5" → true, but 5 === "5" → false.
+
+5. What is the DOM in JavaScript?
+The DOM (Document Object Model) is a tree-like structure representing HTML elements. JavaScript can manipulate it using methods like getElementById, querySelector, appendChild, and removeChild.
+
+6. Explain closures with an example.
+A closure is when a function “remembers” variables from its outer scope even after that scope has finished executing.
+Example:
+
+js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+counter(); // 1
+counter(); // 2
+7. What is an event loop?
+The event loop manages execution of synchronous code, asynchronous callbacks, and promises. It continuously checks the call stack and task queues to ensure non-blocking execution.
+
+8. Difference between synchronous and asynchronous code?
+Synchronous: Executes line by line, blocking further execution until complete.
+
+Asynchronous: Executes tasks in the background (like API calls, timers) without blocking the main thread.
+
+9. What are promises in JavaScript?
+Promises represent the eventual completion or failure of an asynchronous operation. They have three states: pending, fulfilled, rejected. Example:
+
+js
+fetch("data.json")
+  .then(response => response.json())
+  .catch(error => console.error(error));
+10. Explain async/await.
+async/await is syntactic sugar over promises, making asynchronous code look synchronous. Example:
+
+js
+async function getData() {
+  try {
+    let res = await fetch("data.json");
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+11. What is the difference between null and undefined?
+null: Explicitly set by developers to represent “no value.”
+
+undefined: Default state of variables that are declared but not initialized.
+
+12. Explain prototype-based inheritance.
+JavaScript objects inherit properties and methods from a prototype object. Functions have a prototype property, and objects have an internal [[Prototype]] chain.
+
+13. What are arrow functions?
+Arrow functions are a concise syntax for writing functions. They do not have their own this, making them useful in callbacks. Example:
+
+js
+const add = (a, b) => a + b;
+14. What is the difference between for...in and for...of?
+for...in: Iterates over enumerable properties of an object.
+
+for...of: Iterates over values of iterable objects like arrays, strings, maps.
+
+15. Explain event delegation.
+Event delegation is attaching a single event listener to a parent element to handle events for its child elements using event bubbling. This improves performance.
+
+16. What is the difference between localStorage, sessionStorage, and cookies?
+localStorage: Stores data with no expiration.
+
+sessionStorage: Stores data for the session only.
+
+cookies: Small data stored with expiration, sent with HTTP requests.
+
+17. What is the difference between function declaration and function expression?
+Declaration: Hoisted, available before execution.
+
+Expression: Assigned to a variable, not hoisted.
+Example:
+
+js
+function declared() {}
+const expressed = function() {};
+18. Explain this keyword in JavaScript.
+this refers to the object that is executing the function. Its value depends on how the function is called (global, object method, constructor, arrow function).
+
+19. What is the difference between shallow copy and deep copy?
+Shallow copy: Copies only references of nested objects (e.g., Object.assign).
+
+Deep copy: Creates independent copies of nested objects (e.g., structuredClone).
+
+20. Explain JavaScript modules.
+Modules allow code organization and reuse. Using export and import, developers can split code into files. Example:
+
+js
+// math.js
+export function add(a, b) { return a + b; }
+// main.js
+import { add } from './math.js';
+21. What is a higher-order function?
+A higher-order function takes another function as an argument or returns a function. Example: map, filter, reduce.
+
+22. Explain debouncing and throttling.
+Debouncing: Ensures a function runs only after a certain time has passed since the last call.
+
+Throttling: Ensures a function runs at most once in a given time interval.
+
+23. What is the difference between apply, call, and bind?
+call: Invokes a function with a given this and arguments.
+
+apply: Similar to call, but arguments are passed as an array.
+
+bind: Returns a new function with bound this.
+
+24. What is the difference between map, filter, and reduce?
+map: Transforms each element.
+
+filter: Returns elements that match a condition.
+
+reduce: Accumulates values into a single result.
+
+25. Explain the difference between setTimeout and setInterval.
+setTimeout: Executes a function once after a delay.
+
+setInterval: Executes a function repeatedly at specified intervals until cleared.
