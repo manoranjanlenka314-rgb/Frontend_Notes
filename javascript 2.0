@@ -1,0 +1,195 @@
+JavaScript (JS) is a high-level, interpreted programming language primarily used for web development. It was created in 1995 by Brendan Eich and has since become one of the core technologies of the web alongside HTML and CSS. JS enables developers to add dynamic behavior, interactivity, and logic to web pages, making them more engaging and functional.
+
+Key Features
+Interpreted & Lightweight: Runs directly in browsers without compilation.
+
+Dynamic Typing: Variables don’t require explicit type declarations.
+
+Prototype-based OOP: Objects inherit directly from other objects.
+
+Event-driven: Handles user interactions like clicks, keypresses, and form submissions.
+
+Asynchronous Programming: Supports callbacks, promises, and async/await for non-blocking operations.
+
+Cross-platform: Works across all major browsers and environments (Node.js for server-side).
+
+Core Concepts
+Variables & Scope: var, let, and const define variables with different scoping rules.
+
+Functions: First-class citizens; can be passed as arguments, returned, or stored in variables.
+
+Objects: Collections of key-value pairs; the foundation of JS data structures.
+
+DOM Manipulation: JS interacts with the Document Object Model to update UI dynamically.
+
+Events: JS listens and responds to user actions.
+
+ES6+ Features: Arrow functions, template literals, destructuring, modules, classes, etc.
+
+Execution Model: Single-threaded with an event loop that manages asynchronous tasks.
+
+Ecosystem
+Frameworks & Libraries: React, Angular, Vue for front-end; Node.js and Express for back-end.
+
+Tooling: Bundlers (Webpack, Vite), package managers (npm, yarn).
+
+Testing: Jest, Mocha, Jasmine.
+
+APIs: Fetch API, WebSockets, localStorage, IndexedDB.
+
+JavaScript’s versatility makes it essential for frontend, backend, mobile apps, desktop apps, and even IoT. Its evolution continues with modern ECMAScript standards.
+
+🎯 25 Best JavaScript Interview Questions with Detailed Answers
+1. What is JavaScript, and why is it important?
+JavaScript is a scripting language that enables dynamic content on web pages. Unlike HTML and CSS, which structure and style content, JS adds logic and interactivity. It’s crucial because almost every modern website relies on JS for responsiveness, animations, and user engagement.
+
+2. Difference between var, let, and const.
+var: Function-scoped, allows redeclaration, hoisted.
+
+let: Block-scoped, cannot be redeclared in the same scope, hoisted but not initialized.
+
+const: Block-scoped, must be initialized, cannot be reassigned.
+This distinction helps prevent bugs related to variable scope and reassignment.
+
+3. Explain hoisting in JavaScript.
+Hoisting is JS’s behavior of moving variable and function declarations to the top of their scope during compilation. For example, functions declared with function can be called before they’re defined, while let and const variables exist in a “temporal dead zone” until initialized.
+
+4. What is the difference between == and ===?
+==: Loose equality, performs type coercion.
+
+===: Strict equality, checks both value and type.
+Example: 5 == "5" is true, but 5 === "5" is false.
+
+5. Explain closures with an example.
+A closure is a function that retains access to its lexical scope even when executed outside of it.
+
+js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+Closures are used for data privacy and maintaining state.
+
+6. What is the event loop in JavaScript?
+The event loop manages asynchronous operations. JS is single-threaded, but the event loop allows non-blocking execution by queuing callbacks and promises. Tasks are divided into macro-tasks (setTimeout, setInterval) and micro-tasks (promises).
+
+7. Difference between synchronous and asynchronous code.
+Synchronous: Executes line by line, blocking further execution until complete.
+
+Asynchronous: Allows tasks to run in the background, freeing the main thread. Examples: AJAX calls, setTimeout.
+
+8. What are promises in JavaScript?
+Promises represent the eventual completion or failure of an asynchronous operation. They have three states: pending, fulfilled, rejected.
+
+js
+fetch("data.json")
+  .then(response => response.json())
+  .catch(error => console.error(error));
+9. Explain async/await.
+async/await is syntactic sugar over promises, making asynchronous code look synchronous.
+
+js
+async function getData() {
+  try {
+    let res = await fetch("data.json");
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+10. What is the difference between null and undefined?
+null: Intentional absence of value.
+
+undefined: Variable declared but not assigned a value.
+
+11. Explain the concept of prototypes.
+Every JS object has a prototype, which is another object it inherits properties from. This forms the basis of inheritance in JS. Functions have a prototype property used when creating objects via new.
+
+12. What are arrow functions?
+Arrow functions provide a shorter syntax and lexically bind this.
+
+js
+const add = (a, b) => a + b;
+They’re concise but cannot be used as constructors and don’t have their own arguments object.
+
+13. Explain the difference between function declaration and function expression.
+Declaration: Hoisted, can be called before definition.
+
+Expression: Assigned to a variable, not hoisted.
+
+js
+function declared() {}
+const expressed = function() {};
+14. What is the difference between for...in and for...of?
+for...in: Iterates over object keys.
+
+for...of: Iterates over iterable values (arrays, strings, maps).
+
+15. Explain DOM manipulation in JavaScript.
+JS interacts with the DOM using methods like getElementById, querySelector, appendChild, and removeChild. This allows dynamic updates to web pages without reloading.
+
+16. What is event delegation?
+Event delegation is attaching a single event listener to a parent element to manage events for its child elements. It improves performance and reduces memory usage.
+
+17. Explain this keyword in JavaScript.
+this refers to the object that is executing the current function. Its value depends on how the function is called:
+
+In global scope: window (or undefined in strict mode).
+
+In object methods: the object itself.
+
+In arrow functions: lexically inherited.
+
+18. What are higher-order functions?
+Functions that take other functions as arguments or return them. Examples: map, filter, reduce.
+
+19. Explain the difference between shallow copy and deep copy.
+Shallow copy: Copies only references of nested objects.
+
+Deep copy: Creates entirely new objects recursively.
+Example: Object.assign() vs structured cloning.
+
+20. What is the difference between localStorage, sessionStorage, and cookies?
+localStorage: Stores data permanently until cleared.
+
+sessionStorage: Stores data for the session only.
+
+cookies: Small data stored with expiration, sent with HTTP requests.
+
+21. Explain the difference between call, apply, and bind.
+call: Invokes function with arguments individually.
+
+apply: Invokes function with arguments as an array.
+
+bind: Returns a new function with bound this.
+
+22. What is the difference between undefined and not defined?
+undefined: Variable exists but has no value.
+
+not defined: Variable hasn’t been declared at all.
+
+23. Explain the concept of modules in JavaScript.
+Modules allow code organization and reuse. ES6 introduced import and export.
+
+js
+// math.js
+export function add(a, b) { return a + b; }
+// main.js
+import { add } from './math.js';
+24. What is the difference between innerHTML and textContent?
+innerHTML: Returns HTML markup inside an element.
+
+textContent: Returns only text, ignoring HTML tags.
+innerHTML can expose security risks (XSS).
+
+25. Explain debouncing and throttling.
+Debouncing: Ensures a function runs only after a specified delay since the last call (e.g., search input).
+
+Throttling: Ensures a function runs at most once in a specified interval (e.g., scroll events).
