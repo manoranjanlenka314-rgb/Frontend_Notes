@@ -1,0 +1,171 @@
+JavaScript is a high-level, interpreted programming language primarily used to make web pages interactive. Along with HTML (structure) and CSS (style), JavaScript is one of the core technologies of the web.
+
+Originally created by Brendan Eich in 1995, JavaScript started as a simple scripting language for browsers. Today, it has evolved into a powerful, full-stack language used for frontend, backend, mobile apps, and even desktop applications.
+
+🔹 Core Features of JavaScript
+1. Dynamic and Weakly Typed
+
+You don’t need to declare data types explicitly:
+
+let x = 10;
+x = "Hello"; // valid
+2. Interpreted Language
+
+JavaScript runs directly in the browser using engines like:
+
+Google Chrome → V8 Engine
+Mozilla Firefox → SpiderMonkey
+3. Event-Driven Programming
+
+JavaScript reacts to user actions:
+
+clicks
+typing
+scrolling
+4. Asynchronous Programming
+
+JavaScript can run tasks without blocking:
+
+Callbacks
+Promises
+Async/Await
+5. Prototype-Based OOP
+
+Instead of classical inheritance, JavaScript uses prototypes.
+
+6. Runs Everywhere
+
+Thanks to Node.js, JavaScript can run outside browsers (backend development).
+
+🔹 JavaScript Uses
+Web development (frontend)
+Backend APIs (Node.js)
+Mobile apps (React Native)
+Desktop apps (Electron)
+Game development
+🔹 JavaScript + DOM
+
+The most important use of JavaScript in browsers is interacting with the DOM (Document Object Model).
+
+🌳 What is DOM?
+
+The DOM (Document Object Model) is a programming interface for HTML and XML documents. It represents the page as a tree structure, where each element is a node.
+
+Example:
+
+<body>
+  <h1>Hello</h1>
+</body>
+
+This becomes:
+
+Document
+ └── Body
+      └── h1
+
+JavaScript uses the DOM to:
+
+Access elements
+Modify content
+Change styles
+Handle events
+📘 25 DOM Questions and Answers
+1. What is DOM?
+
+The DOM is a structured representation of an HTML document as a tree of objects. It allows JavaScript to access and manipulate elements dynamically, making web pages interactive.
+
+2. What is document object?
+
+The document object represents the entire HTML page. It is the root of the DOM and provides methods to access elements, modify content, and handle events.
+
+3. What is getElementById()?
+
+This method selects an element using its unique ID. It returns a single element object which can then be modified or styled using JavaScript.
+
+4. What is getElementsByClassName()?
+
+It selects multiple elements with the same class name and returns an HTMLCollection. You can loop through it to apply changes to each element.
+
+5. What is querySelector()?
+
+This method selects the first element that matches a CSS selector. It is flexible and supports complex selectors like classes, IDs, and tags.
+
+6. What is querySelectorAll()?
+
+It returns all elements matching a CSS selector as a NodeList. You can iterate through it using loops like forEach().
+
+7. Difference between HTMLCollection and NodeList?
+
+HTMLCollection is live (updates automatically), while NodeList is static in most cases. NodeList also supports forEach, while HTMLCollection does not directly.
+
+8. What is innerHTML?
+
+It allows you to get or set HTML content inside an element. It can insert full HTML but may lead to security issues if not handled carefully.
+
+9. What is textContent?
+
+It returns only text inside an element without HTML tags. It is safer and faster compared to innerHTML.
+
+10. What is style property?
+
+It allows you to apply inline CSS styles directly to an element using JavaScript.
+
+11. What is classList?
+
+It is used to add, remove, or toggle CSS classes on an element, making it easier to manage styling dynamically.
+
+12. What is createElement()?
+
+This method creates a new HTML element dynamically, which can then be added to the DOM.
+
+13. What is appendChild()?
+
+It adds a new child element to a parent element at the end of its children list.
+
+14. What is removeChild()?
+
+It removes a child element from a parent node.
+
+15. What is replaceChild()?
+
+It replaces one child element with another within a parent node.
+
+16. What is Event in DOM?
+
+An event is an action like clicking, typing, or hovering. JavaScript listens and responds to these events.
+
+17. What is addEventListener()?
+
+It attaches an event handler to an element without overwriting existing handlers, making event handling more flexible.
+
+18. What is Event Bubbling?
+
+It is when an event starts from the target element and propagates upward through its parent elements.
+
+19. What is Event Capturing?
+
+It is the opposite of bubbling; the event starts from the root and travels down to the target element.
+
+20. What is preventDefault()?
+
+It stops the default action of an element, like preventing form submission or link navigation.
+
+21. What is stopPropagation()?
+
+It prevents the event from propagating (bubbling or capturing) further in the DOM tree.
+
+22. What is setAttribute()?
+
+It sets or updates an attribute on an HTML element, such as class, id, or src.
+
+23. What is getAttribute()?
+
+It retrieves the value of an attribute from an element.
+
+24. What is parentNode?
+
+It returns the parent element of a given node, allowing traversal upward in the DOM tree.
+
+25. What is childNodes?
+
+It returns all child nodes of an element, including text nodes, comments, and elements.
