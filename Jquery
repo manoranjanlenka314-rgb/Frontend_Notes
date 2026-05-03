@@ -1,0 +1,172 @@
+jQuery is a fast, lightweight, and feature-rich JavaScript library designed to simplify tasks like HTML DOM manipulation, event handling, animations, and AJAX interactions.
+
+Before jQuery, developers had to write long and complex JavaScript code to perform simple tasks like selecting elements, handling events, or making API calls. jQuery solved this by providing easy-to-use methods and shorter syntax, making development faster and more efficient.
+
+✅ Key Features of jQuery
+1. DOM Manipulation
+
+jQuery makes it very easy to select and manipulate HTML elements using CSS-style selectors.
+
+Example:
+
+$("#id").hide();
+$(".class").css("color", "red");
+2. Event Handling
+
+Handling events like clicks, keypress, hover, etc., becomes simple.
+
+$("#btn").click(function() {
+    alert("Button clicked");
+});
+3. AJAX Support
+
+jQuery simplifies asynchronous HTTP requests to communicate with the server without reloading the page.
+
+$.ajax({
+    url: "/api/data",
+    type: "GET",
+    success: function(response) {
+        console.log(response);
+    }
+});
+4. Animations & Effects
+
+You can easily create animations like fade, slide, hide, show.
+
+$("#box").fadeIn();
+$("#box").slideUp();
+5. Cross-Browser Compatibility
+
+jQuery handles browser differences internally, so your code works across different browsers.
+
+6. Chaining
+
+You can apply multiple actions in a single line.
+
+$("#box").css("color", "red").slideUp().slideDown();
+🔹 jQuery Syntax
+
+Basic syntax:
+
+$(selector).action();
+$ → jQuery object
+selector → HTML element
+action() → method to perform
+🔹 Document Ready
+
+Ensures code runs after the page loads:
+
+$(document).ready(function() {
+    // code here
+});
+🔹 Why Use jQuery?
+Reduces code length
+Easy to learn
+Improves productivity
+Strong community support
+🔹 Limitations (Important for Interview)
+Slower than pure JavaScript in modern apps
+Not needed much with modern frameworks like React/Angular
+Adds extra dependency
+🔥 25 jQuery Interview Questions & Answers
+1. What is jQuery?
+
+jQuery is a JavaScript library that simplifies DOM manipulation, event handling, animations, and AJAX.
+
+2. What does $ mean in jQuery?
+
+$ is a shortcut for the jQuery function used to select elements.
+
+3. What is DOM?
+
+DOM (Document Object Model) represents the structure of HTML as a tree.
+
+4. What is $(document).ready()?
+
+It ensures code runs after the DOM is fully loaded.
+
+5. Difference between JavaScript and jQuery?
+
+JavaScript is a programming language; jQuery is a library built on top of it.
+
+6. What is a selector in jQuery?
+
+Selectors are used to target HTML elements.
+
+Example:
+
+$("#id"), $(".class"), $("p")
+7. What is event handling?
+
+It is responding to user actions like click, hover, keypress.
+
+8. How to hide and show elements?
+$("#id").hide();
+$("#id").show();
+9. What is AJAX in jQuery?
+
+AJAX allows sending/receiving data without page reload.
+
+10. Difference between .html() and .text()?
+.html() → gets HTML content
+.text() → gets plain text
+11. What is chaining?
+
+Performing multiple operations in one line.
+
+12. What is .css() method?
+
+Used to apply styles.
+
+$("#id").css("color", "blue");
+13. What is .addClass()?
+
+Adds a CSS class to elements.
+
+14. What is .removeClass()?
+
+Removes a class from elements.
+
+15. What is .toggle()?
+
+Switches between hide and show.
+
+16. What is .val()?
+
+Gets or sets input value.
+
+17. What is .attr()?
+
+Gets or sets attributes.
+
+18. What is .fadeIn()?
+
+Displays element with fade effect.
+
+19. What is .slideUp()?
+
+Hides element with sliding effect.
+
+20. What is .on()?
+
+Used to attach event handlers.
+
+21. What is difference between .click() and .on("click")?
+
+.on() is more flexible and supports dynamic elements.
+
+22. What is $.each()?
+
+Used to loop through arrays or objects.
+
+23. What is $.ajax()?
+
+Used for HTTP requests.
+
+24. What are jQuery effects?
+
+Animations like fade, slide, toggle.
+
+25. Why jQuery is less used now?
+
+Because modern JavaScript (ES6+) and frameworks like React replaced many of its uses.
