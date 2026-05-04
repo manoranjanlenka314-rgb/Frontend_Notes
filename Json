@@ -1,0 +1,224 @@
+JSON (JavaScript Object Notation) is a lightweight data-interchange format widely used in web development, APIs, and configuration files. It is text-based, human-readable, and language-independent, though it originated from JavaScript. JSON structures data using key-value pairs, arrays, and nested objects. Its simplicity and compatibility make it the backbone of modern web communication.
+
+🔑 Key Features:
+Syntax: Uses {} for objects, [] for arrays, and key-value pairs separated by :.
+
+Data Types: Supports strings, numbers, booleans, null, arrays, and objects.
+
+Human-readable: Easy to write and understand.
+
+Language-independent: Supported by almost all programming languages.
+
+Common Use Cases:
+
+API responses (REST, GraphQL)
+
+Configuration files (package.json, appsettings.json)
+
+Data storage in NoSQL databases (MongoDB)
+
+Serialization/deserialization of objects
+
+⚙️ Example:
+json
+{
+  "employee": {
+    "id": 101,
+    "name": "Manoranjan",
+    "skills": ["C#", "SQL", "JavaScript"],
+    "isActive": true,
+    "details": {
+      "department": "IT",
+      "location": "Hyderabad"
+    }
+  }
+}
+This JSON represents an employee with nested objects and arrays.
+
+🎯 25 JSON Interview Questions with Detailed Answers
+1. What is JSON and why is it used?
+JSON is a lightweight format for storing and transporting data. It is used because it is easy to read/write for humans and easy to parse for machines. Unlike XML, JSON is less verbose and integrates seamlessly with JavaScript, making it ideal for APIs.
+
+2. What are the basic data types supported in JSON?
+JSON supports:
+
+String ("Hello")
+
+Number (123, 45.67)
+
+Boolean (true, false)
+
+Null (null)
+
+Object ({ "key": "value" })
+
+Array ([1,2,3])
+This limited set ensures simplicity and universal compatibility.
+
+3. How is JSON different from XML?
+JSON is less verbose, XML uses tags.
+
+JSON supports arrays natively, XML does not.
+
+JSON is faster to parse, XML parsing is heavier.
+
+JSON is widely used in APIs, XML is common in legacy systems.
+Example:
+
+xml
+<employee><id>101</id><name>Manoranjan</name></employee>
+vs
+
+json
+{"id":101,"name":"Manoranjan"}
+4. Explain JSON objects and arrays with examples.
+Object: { "id": 1, "name": "Raj" } → key-value pairs.
+
+Array: [ "C#", "SQL", "JS" ] → ordered list.
+Objects represent entities, arrays represent collections.
+
+5. What is JSON Schema?
+JSON Schema defines the structure of JSON data. It validates whether JSON follows expected rules (types, required fields). Example:
+
+json
+{
+  "type": "object",
+  "properties": {
+    "id": {"type": "number"},
+    "name": {"type": "string"}
+  },
+  "required": ["id", "name"]
+}
+6. How do you parse JSON in JavaScript?
+Using JSON.parse():
+
+js
+let data = '{"id":101,"name":"Raj"}';
+let obj = JSON.parse(data);
+console.log(obj.name); // Raj
+7. How do you convert an object to JSON in JavaScript?
+Using JSON.stringify():
+
+js
+let obj = {id:101, name:"Raj"};
+let json = JSON.stringify(obj);
+console.log(json); // {"id":101,"name":"Raj"}
+8. What happens if JSON is malformed?
+Parsing fails with an error. Example:
+
+json
+{ "id": 101, "name": Raj }
+Here, Raj is not in quotes → invalid JSON.
+
+9. Can JSON contain comments?
+No. JSON strictly disallows comments to keep parsing simple. Alternatives: use metadata fields like "note": "This is a comment".
+
+10. What is the MIME type of JSON?
+application/json is the standard MIME type used in HTTP headers.
+
+11. How is JSON used in REST APIs?
+APIs send responses in JSON format:
+
+json
+{
+  "status": "success",
+  "data": {"id":101,"name":"Raj"}
+}
+Clients parse this to display or process data.
+
+12. Explain serialization and deserialization in JSON.
+Serialization: Converting object → JSON string (JSON.stringify).
+
+Deserialization: JSON string → object (JSON.parse).
+This enables data exchange between client and server.
+
+13. What is the difference between JSON and JavaScript objects?
+JSON is a string format, JavaScript object is in-memory data.
+
+JSON keys must be in double quotes, JS object keys can be unquoted.
+Example:
+
+js
+let obj = {id:101}; // JS object
+let json = '{"id":101}'; // JSON string
+14. Can JSON store dates?
+JSON has no native date type. Dates are stored as strings:
+
+json
+{"date":"2026-05-04T23:52:00"}
+Clients must parse them into Date objects.
+
+15. What is JSONP?
+JSONP (JSON with Padding) is a technique to bypass cross-domain restrictions by wrapping JSON in a function call. Example:
+
+js
+callback({"id":101,"name":"Raj"});
+16. How do you validate JSON?
+Online validators (jsonlint.com)
+
+Programmatically using JSON Schema
+
+Parsing with JSON.parse() (if it fails, JSON is invalid).
+
+17. What is the difference between null and undefined in JSON?
+JSON supports null but not undefined.
+
+If a property is undefined in JS, it is omitted when converted to JSON.
+
+18. How do you handle nested JSON objects?
+Access using dot or bracket notation:
+
+js
+let obj = {"employee":{"id":101,"details":{"dept":"IT"}}};
+console.log(obj.employee.details.dept); // IT
+19. What is the role of JSON in NoSQL databases?
+Databases like MongoDB store documents in JSON-like format (BSON). JSON makes schema flexible and easy to query.
+
+20. Can JSON keys be numbers?
+No, keys must be strings. Example:
+
+json
+{"123":"value"} // valid
+But "123" is a string, not a number.
+
+21. How do you pretty-print JSON?
+Using JSON.stringify with spacing:
+
+js
+JSON.stringify(obj, null, 2);
+This adds indentation for readability.
+
+22. What is the difference between JSON and YAML?
+JSON uses {} and [], YAML uses indentation.
+
+YAML supports comments, JSON does not.
+
+JSON is stricter, YAML is more human-friendly.
+
+23. How do you send JSON in HTTP requests?
+Using fetch:
+
+js
+fetch("/api", {
+  method: "POST",
+  headers: {"Content-Type":"application/json"},
+  body: JSON.stringify({id:101,name:"Raj"})
+});
+24. What are common pitfalls when working with JSON?
+Forgetting quotes around keys/strings.
+
+Using trailing commas.
+
+Assuming JSON supports functions or comments.
+
+Handling large JSON files without streaming.
+
+25. Why is JSON so popular in modern applications?
+Lightweight and fast.
+
+Universally supported.
+
+Perfect for APIs and microservices.
+
+Easy integration with JavaScript and other languages.
+Its simplicity and efficiency make it the default choice for data exchange.
