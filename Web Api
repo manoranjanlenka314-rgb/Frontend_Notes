@@ -1,0 +1,172 @@
+Definition: ASP.NET Web API is a framework for building HTTP services that can be consumed by a wide range of clients (browsers, mobile devices, desktop apps).
+
+Purpose: It simplifies the creation of RESTful services without the heavy configuration of WCF. It supports JSON and XML, making it ideal for modern applications.
+
+Key Features:
+
+Routing: Attribute and convention-based routing for mapping URLs to controller actions.
+
+Content Negotiation: Automatically selects response format (JSON/XML) based on client request headers.
+
+Model Binding & Validation: Converts HTTP request data into strongly typed objects.
+
+Dependency Injection: Supports DI for testability and modular design.
+
+Security: Token-based authentication, OAuth, and cookie-based authentication.
+
+Hosting: Can be hosted in IIS or self-hosted in custom processes.
+
+Use Cases: Mobile backends, single-page applications (Angular/React), IoT services, microservices.
+
+🎯 25 ASP.NET MVC Web API Interview Questions & Answers
+1. What is ASP.NET Web API?
+Answer: ASP.NET Web API is a framework for building RESTful services over HTTP. Unlike WCF, it is lightweight, requires minimal configuration, and supports multiple formats (JSON, XML). It integrates naturally with MVC, allowing developers to expose data and business logic to external clients.
+
+2. Why use Web API instead of WCF?
+Answer: WCF is powerful but complex, requiring contracts, bindings, and configurations. Web API is simpler, REST-focused, and ideal for lightweight services. It supports direct HTTP verbs (GET, POST, PUT, DELETE) and is optimized for mobile and web clients.
+
+3. Explain REST principles in Web API.
+Answer: REST emphasizes stateless communication, resource-based URLs, and standard HTTP verbs. For example:
+
+GET /api/products → fetch products
+
+POST /api/products → add product
+
+PUT /api/products/1 → update product
+
+DELETE /api/products/1 → remove product
+
+4. How does routing work in Web API?
+Answer: Routing maps HTTP requests to controller actions. Web API supports:
+
+Convention-based routing: Defined in WebApiConfig.cs.
+
+Attribute routing: [Route("api/products/{id}")] for fine-grained control.
+
+5. What is content negotiation?
+Answer: Content negotiation allows Web API to return responses in different formats (JSON, XML) based on the Accept header in the request. Example: Accept: application/json returns JSON.
+
+6. How do you secure a Web API?
+Answer: Security can be implemented using:
+
+Token-based authentication (JWT, OAuth)
+
+API keys
+
+Role-based authorization
+
+HTTPS enforcement
+
+7. Difference between MVC Controller and Web API Controller?
+Answer:
+
+MVC Controller returns ViewResult for rendering HTML views.
+
+Web API Controller returns HttpResponseMessage or IHttpActionResult for data responses (JSON/XML).
+
+8. What are return types in Web API?
+Answer:
+
+void → empty response
+
+HttpResponseMessage → full control over HTTP response
+
+IHttpActionResult → flexible, testable responses
+
+Custom objects → serialized into JSON/XML
+
+9. How do you handle exceptions in Web API?
+Answer: Using:
+
+Exception filters (IExceptionFilter)
+
+Global error handling (ExceptionHandler)
+
+Custom middleware for logging and returning standardized error responses.
+
+10. Explain dependency injection in Web API.
+Answer: DI allows injecting services into controllers. Example:
+
+csharp
+public class ProductsController : ApiController {
+    private readonly IProductService _service;
+    public ProductsController(IProductService service) {
+        _service = service;
+    }
+}
+This improves testability and modularity.
+
+11. How do you implement versioning in Web API?
+Answer:
+
+URI versioning: /api/v1/products
+
+Query string versioning: /api/products?version=2
+
+Header versioning: Accept: application/json; version=2
+
+12. What is OData in Web API?
+Answer: OData enables querying data using URL parameters ($filter, $select, $orderby). Example: /api/products?$filter=price gt 100.
+
+13. How do you enable CORS in Web API?
+Answer: Add EnableCors attribute:
+
+csharp
+[EnableCors(origins: "*", headers: "*", methods: "*")]
+This allows cross-domain requests.
+
+14. How do you test Web API?
+Answer: Using tools like Postman, Swagger, or unit tests with HttpClient. Example:
+
+csharp
+var response = await client.GetAsync("/api/products");
+15. How do you implement authentication in Web API?
+Answer: Using OAuth2, JWT tokens, or ASP.NET Identity. Example: Clients send Authorization: Bearer <token> in headers.
+
+16. What is self-hosting in Web API?
+Answer: Hosting Web API outside IIS using HttpSelfHostServer. Useful for console apps or Windows services.
+
+17. How do you implement filters in Web API?
+Answer: Filters like AuthorizationFilter, ActionFilter, ExceptionFilter allow cross-cutting concerns (logging, caching, security).
+
+18. How do you handle large data in Web API?
+Answer: Use paging, streaming, and compression (GZip). Example: /api/products?page=2&pageSize=50.
+
+19. Explain model binding in Web API.
+Answer: Converts HTTP request data into strongly typed objects. Example:
+
+csharp
+public IHttpActionResult Post(Product product)
+Here, JSON body is bound to Product.
+
+20. How do you implement caching in Web API?
+Answer: Using OutputCache, ETags, or Response headers (Cache-Control). Example: ETag prevents unnecessary re-fetching.
+
+21. How do you return custom HTTP status codes?
+Answer:
+
+csharp
+return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound));
+22. How do you integrate Web API with Angular/React?
+Answer: Web API acts as backend, consumed via AJAX/Fetch. Example:
+
+javascript
+fetch("/api/products").then(res => res.json());
+23. How do you implement logging in Web API?
+Answer: Using NLog, Serilog, or custom middleware. Logs requests, responses, and exceptions.
+
+24. How do you deploy Web API?
+Answer: Deploy via IIS, Azure App Service, Docker containers, or self-hosting. Ensure proper configuration of routing and authentication.
+
+25. What are best practices in Web API?
+Answer:
+
+Use RESTful conventions
+
+Implement versioning
+
+Secure with HTTPS & tokens
+
+Optimize with caching & compression
+
+Document with Swagger/OpenAPI
