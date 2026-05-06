@@ -1,0 +1,224 @@
+Q1. What is ASP.NET MVC and why was it introduced?  
+Answer: ASP.NET MVC is a framework for building web applications using the Model‑View‑Controller pattern. It was introduced to overcome limitations of WebForms such as tight coupling of UI with business logic, difficulty in unit testing, and lack of fine‑grained control over HTML. MVC separates concerns:
+
+Model → business/data logic
+
+View → UI rendering
+
+Controller → request handling
+This separation makes applications more testable, maintainable, and gives developers full control over HTML, CSS, and JavaScript.
+
+Q2. Explain the MVC request life cycle.  
+Answer: When a request hits an MVC app:
+
+Routing → URL is matched to a route.
+
+Controller Selection → The appropriate controller is instantiated.
+
+Action Method Execution → The action method runs, often interacting with the Model.
+
+Result Execution → Typically returns a ViewResult, which renders a View.
+
+Response → HTML is sent back to the client.
+This pipeline ensures clear separation and extensibility (filters, dependency injection, etc.).
+
+Q3. Difference between ViewData, ViewBag, and TempData.  
+Answer:
+
+ViewData: Dictionary object, type‑safe casting required, lasts for one request.
+
+ViewBag: Dynamic wrapper around ViewData, easier syntax, also lasts one request.
+
+TempData: Persists across redirects (uses session internally). Useful for passing data between actions.
+👉 Interview tip: emphasize TempData’s persistence across requests.
+
+Q4. How does routing work in MVC?  
+Answer: Routing maps URLs to controller actions. In MVC, routes are defined in RouteConfig.cs. Example:
+
+csharp
+routes.MapRoute(
+  name: "Default",
+  url: "{controller}/{action}/{id}",
+  defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+);
+This means /Products/Details/5 maps to ProductsController.Details(5).
+
+Q5. What are Action Filters?  
+Answer: Action Filters are attributes that allow code to run before or after controller actions. Examples:
+
+[Authorize] → restricts access.
+
+[HandleError] → handles exceptions.
+
+Custom filters → logging, caching, etc.
+They implement IActionFilter or derive from ActionFilterAttribute.
+
+Q6. Explain Razor View Engine.  
+Answer: Razor is a markup syntax for embedding server code into HTML. It uses @ symbol. Example:
+
+html
+<p>Hello @Model.Name</p>
+Razor is lightweight, clean, and prevents XSS by default (HTML encoding). It replaced older .aspx view engine.
+
+Q7. How do you implement validation in MVC?  
+Answer: Using Data Annotations on models:
+
+csharp
+[Required]
+[StringLength(50)]
+public string Name { get; set; }
+Then use Html.ValidationMessageFor in views. Client‑side validation is enabled via jQuery Unobtrusive Validation.
+
+Q8. Difference between Partial View and Layout View.  
+Answer:
+
+Partial View → reusable snippet of UI (like a widget).
+
+Layout View → master page defining common structure (header, footer).
+Partial views are rendered with Html.Partial or Html.RenderPartial.
+
+Q9. How do you return JSON in MVC?  
+Answer: Use JsonResult:
+
+csharp
+public JsonResult GetData() {
+  return Json(new { Name = "Manoranjan", Age = 25 }, JsonRequestBehavior.AllowGet);
+}
+This is useful for AJAX calls.
+
+Q10. How do you handle exceptions in MVC?  
+Answer: Options:
+
+try-catch in controller.
+
+[HandleError] attribute.
+
+Global filters in FilterConfig.cs.
+
+Custom error pages via web.config.
+Best practice: centralized error handling with logging.
+
+🔹 Section 2: ASP.NET Core MVC (10 Q&A)
+Q11. What is ASP.NET Core MVC?  
+Answer: ASP.NET Core MVC is the modern, cross‑platform framework that unifies MVC and Web API. It’s modular, lightweight, and runs on Windows, Linux, macOS. It uses middleware pipeline instead of System.Web, and supports dependency injection out of the box.
+
+Q12. Explain Middleware in ASP.NET Core.  
+Answer: Middleware are components in the request pipeline. Each middleware can process requests and responses. Example: Authentication, Routing, Static Files. Defined in Startup.cs using app.Use.... Order matters.
+
+Q13. How is Dependency Injection handled in Core?  
+Answer: ASP.NET Core has built‑in DI. Services are registered in Startup.ConfigureServices:
+
+csharp
+services.AddScoped<IRepository, Repository>();
+Then injected into controllers via constructor injection.
+
+Q14. Difference between .NET Framework MVC and ASP.NET Core MVC.  
+Answer:
+
+Core is cross‑platform, Framework is Windows‑only.
+
+Core uses middleware, Framework uses HttpModules.
+
+Core unifies MVC + Web API.
+
+Core supports lightweight hosting (Kestrel).
+
+Core is faster and cloud‑ready.
+
+Q15. What is Tag Helper in Core?  
+Answer: Tag Helpers are server‑side components that enable Razor to generate HTML. Example:
+
+html
+<input asp-for="Name" class="form-control" />
+This binds to model property and generates proper HTML + validation attributes.
+
+Q16. How does Routing differ in Core?  
+Answer: Core uses Endpoint Routing. Defined in Startup.cs:
+
+csharp
+app.UseEndpoints(endpoints => {
+  endpoints.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+It’s more flexible and integrates with middleware.
+
+Q17. How do you configure authentication in Core?  
+Answer: Using middleware and Identity. Example:
+
+csharp
+services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options => { options.LoginPath = "/Account/Login"; });
+This sets up cookie‑based authentication.
+
+Q18. What is ViewComponent in Core?  
+Answer: Similar to Partial Views but more powerful. Encapsulates rendering logic + data retrieval. Example: a shopping cart widget. Invoked via @Component.InvokeAsync("Cart").
+
+Q19. How do you handle configuration in Core?  
+Answer: Core uses appsettings.json and environment‑based configuration. Example:
+
+csharp
+Configuration["ConnectionStrings:DefaultConnection"]
+Supports hierarchical settings and dependency injection.
+
+Q20. How do you deploy ASP.NET Core apps?  
+Answer: Options:
+
+IIS with Kestrel.
+
+Self‑hosting with Kestrel.
+
+Docker containers.
+
+Azure App Service.
+Core apps are portable and cloud‑ready.
+
+🔹 Section 3: ASP.NET WebForms (10 Q&A)
+Q21. What is ASP.NET WebForms?  
+Answer: WebForms is the older page‑based framework in .NET. It uses server controls, ViewState, and event‑driven programming. It abstracts HTML/HTTP, making it easier for beginners but less flexible.
+
+Q22. Explain ViewState in WebForms.  
+Answer: ViewState is a hidden field that stores page state between postbacks. Example: values of controls. It increases page size but maintains state without server memory.
+
+Q23. Difference between WebForms and MVC.  
+Answer:
+
+WebForms → page‑centric, heavy ViewState, event‑driven.
+
+MVC → request‑centric, no ViewState, testable, full control over HTML.
+MVC is preferred for modern apps.
+
+Q24. What are Server Controls in WebForms?  
+Answer: Pre‑built UI components like GridView, DropDownList. They generate HTML and handle events on server side. Simplifies development but reduces flexibility.
+
+Q25. Explain Page Life Cycle in WebForms.  
+Answer:
+
+Page Request
+
+Start
+
+Initialization
+
+Load
+
+PostBack Event Handling
+
+Rendering
+
+Unload
+This cycle manages state and events.
+
+Q26. What is PostBack in WebForms?  
+Answer: PostBack is when a page sends data back to the server for processing. Example: clicking a button triggers server event, reloads page with updated state.
+
+Q27. How do you manage state in WebForms?  
+Answer: Options:
+
+ViewState
+
+Session
+
+Cookies
+
+Application State
