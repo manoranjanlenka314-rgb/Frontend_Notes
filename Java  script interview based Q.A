@@ -1,0 +1,237 @@
+📘 Long Notes on JavaScript
+1. Introduction
+JavaScript is a high-level, interpreted programming language primarily used for web development.
+
+It runs in the browser, enabling dynamic, interactive behavior on web pages.
+
+It follows the ECMAScript specification.
+
+2. Key Features
+Lightweight & interpreted: Executes directly in the browser without compilation.
+
+Dynamic typing: Variables don’t need explicit type declarations.
+
+Prototype-based OOP: Objects inherit directly from other objects.
+
+Event-driven: Handles user interactions like clicks, keypresses, etc.
+
+Asynchronous programming: Supports callbacks, promises, and async/await.
+
+3. Core Concepts
+Variables: Declared using var, let, const.
+
+Data Types: Primitive (string, number, boolean, null, undefined, symbol, bigint) and non-primitive (objects, arrays, functions).
+
+Operators: Arithmetic, comparison, logical, assignment, ternary.
+
+Functions: Regular, arrow functions, anonymous functions, higher-order functions.
+
+Objects: Key-value pairs, methods, prototypes.
+
+DOM Manipulation: document.getElementById, querySelector, innerHTML, event listeners.
+
+Events: onclick, onchange, addEventListener.
+
+ES6 Features: Template literals, destructuring, spread/rest operators, classes, modules.
+
+4. Advanced Topics
+Closures: Functions that remember variables from their lexical scope.
+
+Hoisting: Variable and function declarations are moved to the top of scope.
+
+Scope: Global, function, block scope.
+
+Execution Context: Creation phase, execution phase.
+
+Event Loop: Handles asynchronous tasks via call stack, callback queue, microtasks.
+
+Promises & Async/Await: Modern way to handle asynchronous operations.
+
+Modules: import and export for code organization.
+
+Error Handling: try...catch...finally, throw.
+
+5. Browser APIs
+DOM API: Manipulate HTML structure.
+
+BOM (Browser Object Model): window, navigator, location, history.
+
+Fetch API: For AJAX calls.
+
+LocalStorage & SessionStorage: Client-side storage.
+
+6. Use Cases
+Frontend interactivity (forms, animations).
+
+Backend development (Node.js).
+
+Mobile apps (React Native).
+
+Game development.
+
+APIs and microservices.
+
+🎯 30 Interview Questions & Long Answers
+Q1: What is JavaScript and why is it important?
+Answer:  
+JavaScript is a scripting language used to create dynamic web applications. Unlike HTML and CSS, which handle structure and styling, JavaScript adds logic and interactivity. It’s important because it powers modern frameworks like React, Angular, and Vue, and is also used on the server side with Node.js, making it a full-stack language.
+
+Q2: Difference between var, let, and const?
+Answer:
+
+var: Function-scoped, hoisted, can be redeclared.
+
+let: Block-scoped, not hoisted in the same way, cannot be redeclared.
+
+const: Block-scoped, must be initialized, cannot be reassigned.
+Using let and const avoids bugs caused by var’s hoisting and redeclaration.
+
+Q3: Explain hoisting in JavaScript.
+Answer:  
+Hoisting is JavaScript’s behavior of moving declarations to the top of their scope before execution. For example:
+
+js
+console.log(a); // undefined
+var a = 10;
+Here, var a is hoisted, but its assignment isn’t. Functions declared with function are fully hoisted, while arrow functions are not.
+
+Q4: What are closures?
+Answer:  
+A closure is a function that retains access to variables from its outer scope, even after that scope has finished executing. Example:
+
+js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+Closures are used in data privacy, memoization, and event handlers.
+
+Q5: Explain the event loop.
+Answer:  
+The event loop manages asynchronous operations. JavaScript has a single-threaded call stack. When async tasks (like setTimeout or fetch) finish, their callbacks go into the callback queue. The event loop checks if the stack is empty, then pushes queued tasks. This ensures non-blocking execution.
+
+Q6: Difference between synchronous and asynchronous code?
+Answer:
+
+Synchronous: Executes line by line, blocking further execution until finished.
+
+Asynchronous: Allows other code to run while waiting for tasks (like API calls).
+Example: setTimeout is async, while a for loop is sync.
+
+Q7: What are promises?
+Answer:  
+Promises represent the eventual completion or failure of an async operation. States: pending, fulfilled, rejected. Example:
+
+js
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+They improve readability compared to nested callbacks.
+
+Q8: Difference between == and ===?
+Answer:
+
+==: Loose equality, performs type coercion.
+
+===: Strict equality, checks both value and type.
+Example: 5 == "5" → true, but 5 === "5" → false.
+
+Q9: Explain prototype inheritance.
+Answer:  
+JavaScript objects inherit properties via prototypes. Each object has a hidden [[Prototype]] link. Example:
+
+js
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function() {
+  return "Hello " + this.name;
+};
+const p = new Person("Manoranjan");
+console.log(p.greet()); // Hello Manoranjan
+This allows method sharing without duplicating memory.
+
+Q10: What is the difference between null and undefined?
+Answer:
+
+undefined: A variable declared but not assigned.
+
+null: Explicitly assigned to represent “no value.”
+They are different types: typeof null → object, typeof undefined → undefined.
+
+Q11: Explain this keyword.
+Answer:  
+this refers to the object that is executing the function. In global scope, this refers to window (in browsers). In strict mode, it can be undefined. Arrow functions don’t bind this; they inherit from their lexical scope.
+
+Q12: What are arrow functions?
+Answer:  
+Arrow functions are concise function expressions introduced in ES6. They don’t have their own this, making them useful in callbacks. Example:
+
+js
+const add = (a, b) => a + b;
+Q13: Explain async/await.
+Answer:  
+async/await is syntactic sugar over promises. It makes async code look synchronous:
+
+js
+async function getData() {
+  try {
+    const res = await fetch("data.json");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+Q14: What is DOM manipulation?
+Answer:  
+DOM manipulation means interacting with HTML elements using JavaScript. Example:
+
+js
+document.getElementById("btn").addEventListener("click", () => {
+  document.getElementById("msg").innerText = "Hello!";
+});
+Q15: Explain event delegation.
+Answer:  
+Event delegation allows attaching a single event listener to a parent element to handle events for its children. This improves performance. Example:
+
+js
+document.getElementById("list").addEventListener("click", e => {
+  if (e.target.tagName === "LI") {
+    console.log("Clicked:", e.target.innerText);
+  }
+});
+Q16: What is the difference between localStorage and sessionStorage?
+Answer:
+
+localStorage: Stores data with no expiration.
+
+sessionStorage: Stores data only for the session.
+Both store key-value pairs as strings.
+
+Q17: Explain JSON in JavaScript.
+Answer:  
+JSON (JavaScript Object Notation) is a lightweight format for data exchange. Example:
+
+js
+const obj = { name: "Manoranjan", age: 25 };
+const json = JSON.stringify(obj);
+const parsed = JSON.parse(json);
+Q18: What are higher-order functions?
+Answer:  
+Functions that take other functions as arguments or return them. Example:
+
+js
+const nums = [1,2,3];
+const doubled = nums.map(n => n*2);
+Q19: Explain call, apply, and bind.
+Answer:
+
+call: Inv
