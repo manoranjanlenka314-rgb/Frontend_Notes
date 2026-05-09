@@ -1,0 +1,135 @@
+React is a JavaScript library for building user interfaces, created by Facebook in 2013. It focuses on building component-based, declarative UIs. Instead of manipulating the DOM directly, React uses a virtual DOM to efficiently update only the parts of the UI that change. This makes applications faster and more predictable.
+
+🔑 Core Concepts
+Components: Reusable building blocks (functional or class-based).
+
+JSX: Syntax extension that lets you write HTML-like code inside JavaScript.
+
+Props: Inputs to components, making them dynamic and reusable.
+
+State: Internal data that changes over time and triggers re-renders.
+
+Lifecycle Methods / Hooks: Functions that let you run code at specific points (e.g., useEffect for side effects).
+
+Virtual DOM: A lightweight copy of the real DOM; React compares differences (diffing) and updates efficiently.
+
+Unidirectional Data Flow: Data flows from parent to child via props, ensuring predictable behavior.
+
+React Router: Handles navigation in single-page applications.
+
+Context API: Provides global state without prop drilling.
+
+React Fiber: The reconciliation engine that makes rendering smoother and supports features like concurrent mode.
+
+⚙️ Modern Features
+Hooks (introduced in React 16.8): useState, useEffect, useContext, useReducer, useMemo, useCallback.
+
+Concurrent Rendering: Improves responsiveness by splitting rendering work.
+
+Suspense & Lazy Loading: For code-splitting and async data fetching.
+
+Server Components: Allow rendering logic on the server for performance.
+
+📈 Advantages
+Component reusability
+
+Fast rendering with virtual DOM
+
+Strong ecosystem (Redux, Next.js, React Native)
+
+Backed by Facebook and large community
+
+🚧 Challenges
+Steep learning curve for beginners
+
+Frequent updates
+
+Requires knowledge of tooling (Webpack, Babel, npm)
+
+🎯 25 Interview Questions with Detailed Answers
+1. What is React and why is it used?
+React is a JavaScript library for building UIs. It’s used because it makes UI development declarative, efficient, and component-based, reducing complexity compared to manual DOM manipulation.
+
+2. Explain the Virtual DOM.
+The Virtual DOM is a lightweight copy of the real DOM. React updates the virtual DOM first, then compares it with the previous version (diffing). Only the changed parts are updated in the real DOM, improving performance.
+
+3. Difference between Class Components and Functional Components.
+Class Components: Use ES6 classes, lifecycle methods (componentDidMount, etc.), and this.
+
+Functional Components: Simpler, use hooks (useState, useEffect), easier to read and test. Modern React prefers functional components.
+
+4. What are Props in React?
+Props are read-only inputs passed from parent to child components. They make components reusable and dynamic. Example: <Button label="Click Me" />.
+
+5. What is State in React?
+State is mutable data managed inside a component. Changing state triggers a re-render. Example: const [count, setCount] = useState(0).
+
+6. Difference between Props and State.
+Props: Passed from parent, immutable.
+
+State: Managed within component, mutable.
+
+7. Explain React Hooks.
+Hooks are functions that let you use state and lifecycle features in functional components. Examples: useState, useEffect, useContext.
+
+8. What is useEffect used for?
+useEffect handles side effects like API calls, subscriptions, or DOM updates. It runs after render and can clean up resources.
+
+9. What is JSX?
+JSX is a syntax extension that looks like HTML but compiles to React.createElement. It makes UI code more readable and expressive.
+
+10. Explain React’s Unidirectional Data Flow.
+Data flows one way: parent → child via props. This ensures predictable state management and easier debugging.
+
+11. What is React Router?
+React Router is a library for handling navigation in single-page applications (SPA). It uses components like <Route>, <Link>, and <Switch>.
+
+12. What is Context API?
+Context API allows global state management without prop drilling. Example: const ThemeContext = React.createContext().
+
+13. Difference between useMemo and useCallback.
+useMemo: Memoizes a computed value.
+
+useCallback: Memoizes a function reference to avoid re-creation.
+
+14. What is Redux and how does it relate to React?
+Redux is a state management library. It provides a single store, actions, and reducers. React integrates Redux via react-redux.
+
+15. Explain React Fiber.
+React Fiber is the reconciliation engine introduced in React 16. It improves rendering performance and supports features like concurrent mode.
+
+16. What is React’s Reconciliation?
+Reconciliation is the process of comparing the new virtual DOM with the old one and updating only the changed parts in the real DOM.
+
+17. Explain Controlled vs Uncontrolled Components.
+Controlled: Form inputs managed by React state.
+
+Uncontrolled: Form inputs managed by the DOM itself, accessed via refs.
+
+18. What is React Fragment?
+<React.Fragment> lets you group multiple elements without adding extra nodes to the DOM. Shorthand: <>...</>.
+
+19. What is React Suspense?
+Suspense allows components to wait for async operations (like lazy loading) before rendering. Example: React.lazy(() => import('./Component')).
+
+20. Difference between useReducer and useState.
+useState: Simple state management.
+
+useReducer: Complex state logic with multiple transitions, similar to Redux.
+
+21. What is Server-Side Rendering (SSR) in React?
+SSR renders React components on the server, sending HTML to the client. Improves SEO and performance. Frameworks like Next.js support SSR.
+
+22. Explain React Keys.
+Keys are unique identifiers for list items. They help React efficiently update lists by tracking which items changed.
+
+23. What is React Portals?
+Portals allow rendering children into a DOM node outside the parent hierarchy. Example: rendering modals outside the main app div.
+
+24. What is the difference between PureComponent and React.memo?
+PureComponent: Class-based, prevents re-render if props/state haven’t changed.
+
+React.memo: Functional equivalent, memoizes component rendering.
+
+25. What are Higher-Order Components (HOC)?
+HOCs are functions that take a component and return a new component with added functionality. Example: withAuth(Component).
