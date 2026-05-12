@@ -1,0 +1,198 @@
+Angular is a TypeScript-based open-source front-end framework developed and maintained by Google. It is primarily used to build dynamic, single-page applications (SPAs) that deliver a smooth user experience by updating only parts of the page instead of reloading the entire page.
+
+🔑 Key Features
+Component-based architecture: Applications are built using reusable components, each with its own logic, template, and style.
+
+Two-way data binding: Synchronizes data between the model (component class) and the view (template).
+
+Dependency Injection (DI): Provides a way to inject services into components, improving modularity and testability.
+
+Directives: Special markers in templates that extend HTML behavior (e.g., *ngIf, *ngFor).
+
+Routing: Built-in router enables navigation between views without full page reloads.
+
+RxJS & Observables: Angular uses reactive programming for handling asynchronous data streams.
+
+Forms: Supports both template-driven and reactive forms for handling user input.
+
+Ahead-of-Time (AOT) Compilation: Compiles templates at build time, improving performance.
+
+Cross-platform: Can be used for web, mobile (via Ionic), and desktop apps.
+
+🏗️ Architecture
+Angular applications are structured around:
+
+Modules (NgModule): Containers for components, directives, pipes, and services.
+
+Components: The building blocks of UI.
+
+Templates: HTML with Angular syntax for binding and directives.
+
+Services: Business logic and data handling, injected via DI.
+
+Router: Manages navigation and URL mapping.
+
+⚡ Advantages
+Strong support from Google and a large community.
+
+Clear separation of concerns with MVC-like structure.
+
+Built-in tools for testing, routing, and state management.
+
+Scalable for enterprise-level applications.
+
+🚀 Use Cases
+Single-page applications (SPAs).
+
+Enterprise dashboards.
+
+E-commerce platforms.
+
+Progressive Web Apps (PWAs).
+
+🎯 25 Angular Questions with Detailed Answers
+1. What is Angular and why is it used?
+Answer: Angular is a TypeScript-based front-end framework developed by Google. It is used to build dynamic, single-page applications (SPAs) where only parts of the page update instead of reloading the entire page. This improves performance and user experience. Angular provides features like two-way data binding, dependency injection, and modular architecture, making it suitable for scalable enterprise applications.
+
+2. Explain Angular’s component-based architecture.
+Answer: In Angular, the UI is broken into components, each responsible for a specific part of the interface. A component consists of:
+
+A class (business logic, written in TypeScript).
+
+A template (HTML view).
+
+Styles (CSS/SCSS).
+This modular approach makes applications easier to maintain, test, and reuse.
+
+3. What is a module in Angular?
+Answer: A module (NgModule) is a container that groups related components, directives, pipes, and services. The root module (AppModule) bootstraps the application. Modules help organize code and enable lazy loading, improving performance by loading only necessary parts of the app.
+
+4. What is two-way data binding in Angular?
+Answer: Two-way data binding synchronizes data between the component class and the template. If the model changes, the view updates automatically, and vice versa. It is achieved using [(ngModel)]. Example:
+
+html
+<input [(ngModel)]="username">
+<p>Hello {{username}}</p>
+5. What are directives in Angular?
+Answer: Directives are instructions in the DOM. Types:
+
+Structural directives: Change DOM structure (*ngIf, *ngFor).
+
+Attribute directives: Change appearance/behavior ([ngStyle], [ngClass]).
+
+Custom directives: User-defined behavior.
+
+6. Explain Angular services and dependency injection.
+Answer: Services contain reusable business logic or data-fetching code. Dependency Injection (DI) allows services to be injected into components. Example:
+
+ts
+constructor(private userService: UserService) {}
+This promotes modularity and testability.
+
+7. What is Angular routing?
+Answer: Angular’s router enables navigation between views without reloading the page. Routes are defined in app-routing.module.ts. Example:
+
+ts
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+8. Difference between template-driven and reactive forms.
+Answer:
+
+Template-driven forms: Simple, use ngModel, suitable for small forms.
+
+Reactive forms: More powerful, use FormControl and FormGroup, suitable for complex forms with dynamic validation.
+
+9. What is RxJS in Angular?
+Answer: RxJS is a library for reactive programming using observables. Angular uses it for handling asynchronous operations like HTTP requests, event streams, and real-time data.
+
+10. What is Ahead-of-Time (AOT) compilation?
+Answer: AOT compiles Angular templates and TypeScript code into JavaScript at build time, reducing runtime errors and improving performance compared to Just-in-Time (JIT) compilation.
+
+11. What are pipes in Angular?
+Answer: Pipes transform data in templates. Example:
+
+html
+<p>{{ today | date:'short' }}</p>
+Custom pipes can be created for specific transformations.
+
+12. Explain Angular lifecycle hooks.
+Answer: Lifecycle hooks are methods that allow developers to tap into component lifecycle:
+
+ngOnInit(): Runs after component initialization.
+
+ngOnChanges(): Runs when input properties change.
+
+ngOnDestroy(): Runs before component is destroyed.
+
+13. What is Angular CLI?
+Answer: Angular CLI is a command-line tool for creating, building, and managing Angular projects. Example commands:
+
+ng new app-name
+
+ng serve
+
+ng generate component
+
+14. What is lazy loading in Angular?
+Answer: Lazy loading loads modules only when needed, reducing initial load time. It is configured in routing using loadChildren.
+
+15. Difference between AngularJS and Angular.
+Answer:
+
+AngularJS: JavaScript-based, MVC architecture.
+
+Angular: TypeScript-based, component-driven, better performance, modularity, and tooling.
+
+16. What is change detection in Angular?
+Answer: Change detection updates the view when the model changes. Angular uses zones and digest cycles to track changes and update the DOM efficiently.
+
+17. What is the role of ngOnInit()?
+Answer: ngOnInit() is a lifecycle hook used for initialization logic, such as fetching data from APIs when the component loads.
+
+18. What is Angular’s HttpClient?
+Answer: HttpClient is a service for making HTTP requests. It supports observables, interceptors, and error handling. Example:
+
+ts
+this.http.get('api/users').subscribe(data => console.log(data));
+19. What are Angular guards?
+Answer: Guards control route access. Types:
+
+CanActivate: Controls access to routes.
+
+CanDeactivate: Controls leaving a route.
+
+Resolve: Pre-fetches data before route activation.
+
+20. What is Angular Universal?
+Answer: Angular Universal enables server-side rendering (SSR), improving SEO and performance by rendering pages on the server before sending them to the client.
+
+21. What is the difference between ngIf and hidden?
+Answer:
+
+*ngIf: Removes/creates elements in the DOM.
+
+[hidden]: Hides elements using CSS (display:none) but keeps them in the DOM.
+
+22. What is a singleton service in Angular?
+Answer: A singleton service is created once and shared across the application. Declaring a service in the root injector (providedIn: 'root') makes it a singleton.
+
+23. What is Angular Ivy?
+Answer: Ivy is Angular’s rendering engine introduced in Angular 9. It improves build size, performance, and debugging by generating more efficient code.
+
+24. What is the difference between ngOnChanges() and ngDoCheck()?
+Answer:
+
+ngOnChanges(): Triggered when input-bound properties change.
+
+ngDoCheck(): Custom change detection logic, runs with every change detection cycle.
+
+25. What are Angular interceptors?
+Answer: Interceptors are used with HttpClient to modify requests or responses globally. Example use cases:
+
+Adding authentication tokens.
+
+Logging requests.
+
+Handling errors.
