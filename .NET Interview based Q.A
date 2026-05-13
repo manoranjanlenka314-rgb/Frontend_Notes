@@ -1,0 +1,205 @@
+.NET Framework & .NET Core
+.NET is a software development platform created by Microsoft. It provides a runtime environment (CLR – Common Language Runtime) and a rich class library (BCL – Base Class Library).
+
+It supports multiple languages (C#, VB.NET, F#, etc.) and allows building applications across desktop, web, mobile, and cloud.
+
+.NET Framework is Windows-only, while .NET Core (and now .NET 5/6/7/8) is cross-platform, open-source, and modular.
+
+🔹 C# Language
+C# is an object-oriented programming language designed for simplicity, type safety, and productivity.
+
+Key features: strong typing, garbage collection, async/await, LINQ, generics, delegates/events, and modern paradigms like functional programming support.
+
+It integrates tightly with .NET libraries and runtime.
+
+🔹 ASP.NET MVC
+MVC (Model-View-Controller) is a design pattern that separates application logic:
+
+Model → Business logic & data (Entities, DTOs, EF models).
+
+View → UI layer (Razor views, HTML, CSS, JS).
+
+Controller → Handles requests, orchestrates between Model and View.
+
+Benefits: separation of concerns, testability, maintainability, and flexibility.
+
+ASP.NET MVC supports routing, filters, dependency injection, state management, and security features like authentication/authorization.
+
+🔹 Why MVC Matters
+It enforces clean architecture.
+
+Makes unit testing easier.
+
+Allows parallel development (UI team works on Views, backend team works on Models/Controllers).
+
+Integrates with modern front-end frameworks (Angular, React) via Web APIs.
+
+🎯 25 Interview Questions & Answers (Detailed)
+1. What is .NET and why is it used?
+Answer:  
+.NET is a development platform that provides a runtime (CLR) and libraries (BCL) to build applications. It simplifies memory management, supports multiple languages, and enables cross-platform development. It’s used because it reduces boilerplate code, ensures type safety, and provides built-in support for networking, security, and database access.
+
+2. Explain the CLR in .NET.
+Answer:  
+CLR (Common Language Runtime) is the execution engine of .NET. It manages memory, handles exceptions, performs garbage collection, and enforces type safety. It converts MSIL (Intermediate Language) into native machine code via JIT (Just-In-Time) compilation.
+
+3. Difference between .NET Framework and .NET Core?
+Answer:
+
+.NET Framework: Windows-only, monolithic, older.
+
+.NET Core: Cross-platform, modular, open-source, better performance.
+
+.NET 5+: Unified platform combining both.
+
+4. What is C# and how is it different from Java?
+Answer:  
+C# is a modern, object-oriented language for .NET. Compared to Java:
+
+C# integrates tightly with .NET libraries.
+
+Supports properties, events, delegates.
+
+Has async/await for asynchronous programming.
+
+LINQ for querying collections.
+
+5. Explain MVC architecture.
+Answer:  
+MVC divides application into:
+
+Model: Business logic/data.
+
+View: UI presentation.
+
+Controller: Request handling.
+This separation improves maintainability and testability.
+
+6. What is Routing in MVC?
+Answer:  
+Routing maps incoming URLs to controller actions. Example:
+routes.MapRoute("Default", "{controller}/{action}/{id}")  
+This allows clean URLs and SEO-friendly structures.
+
+7. Difference between ViewData, ViewBag, and TempData?
+Answer:
+
+ViewData: Dictionary, requires type casting.
+
+ViewBag: Dynamic wrapper around ViewData.
+
+TempData: Persists data across redirects (uses session internally).
+
+8. What is Razor in MVC?
+Answer:  
+Razor is a view engine that allows embedding C# code in HTML using @ syntax. It’s lightweight, fast, and prevents XSS by default.
+
+9. Explain Filters in MVC.
+Answer:  
+Filters are attributes that run before/after actions:
+
+Authorization filter → Security checks.
+
+Action filter → Logic before/after action.
+
+Result filter → Logic before/after result execution.
+
+Exception filter → Error handling.
+
+10. What is Dependency Injection in MVC?
+Answer:  
+DI is a design pattern where dependencies are injected rather than hardcoded. ASP.NET Core MVC has built-in DI, improving testability and reducing coupling.
+
+11. Explain Entity Framework in MVC.
+Answer:  
+EF is an ORM that maps database tables to C# classes. It supports LINQ queries, migrations, and reduces boilerplate SQL code.
+
+12. What is the difference between ActionResult and JsonResult?
+Answer:
+
+ActionResult: Base class for all results (ViewResult, RedirectResult, etc.).
+
+JsonResult: Returns JSON data, often used in AJAX calls.
+
+13. How does Authentication work in MVC?
+Answer:  
+Authentication verifies user identity. ASP.NET supports:
+
+Forms authentication (cookies).
+
+Identity framework (claims-based).
+
+OAuth/OpenID Connect for external providers.
+
+14. Explain Authorization in MVC.
+Answer:  
+Authorization checks user permissions. Example:
+[Authorize(Roles="Admin")] ensures only admins access certain actions.
+
+15. What is Bundling and Minification?
+Answer:  
+Bundling combines multiple CSS/JS files into one. Minification removes whitespace/comments. This improves performance by reducing HTTP requests.
+
+16. Difference between Partial View and Layout View?
+Answer:
+
+Partial View: Reusable UI snippet (like a widget).
+
+Layout View: Master template defining common structure (header, footer).
+
+17. What is TempData used for?
+Answer:  
+TempData stores data for one request and survives a redirect. Useful for passing messages between actions.
+
+18. Explain Session vs Cookies.
+Answer:
+
+Session: Server-side storage, tied to user session.
+
+Cookies: Client-side storage, persists across requests.
+Sessions are more secure but consume server memory.
+
+19. What is LINQ in C#?
+Answer:  
+LINQ (Language Integrated Query) allows querying collections using SQL-like syntax. Example:
+var result = employees.Where(e => e.Salary > 50000);
+
+20. Explain Async/Await in C#.
+Answer:  
+Async/await simplifies asynchronous programming. It allows non-blocking operations (like I/O) while keeping code readable.
+
+21. What is Garbage Collection in .NET?
+Answer:  
+GC automatically frees unused memory. It works in generations (0,1,2) and prevents memory leaks.
+
+22. Difference between Abstract Class and Interface?
+Answer:
+
+Abstract Class: Can have implementation + abstract methods.
+
+Interface: Only contracts, no implementation (until C# 8 default methods).
+Interfaces allow multiple inheritance.
+
+23. Explain Action vs NonAction in MVC.
+Answer:
+
+Action: Public method in controller accessible via routing.
+
+NonAction: Attribute marking a method as not an action.
+
+24. What is Middleware in ASP.NET Core?
+Answer:  
+Middleware are components in request pipeline (authentication, logging, routing). They process requests sequentially.
+
+25. How do you secure an MVC application?
+Answer:
+
+Use HTTPS.
+
+Validate inputs (anti-XSS).
+
+Use AntiForgery tokens for CSRF protection.
+
+Implement role-based authorization.
+
+Encrypt sensitive data.
