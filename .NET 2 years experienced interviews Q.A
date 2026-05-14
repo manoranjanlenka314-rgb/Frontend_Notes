@@ -1,0 +1,174 @@
+1. Introduction
+ASP.NET MVC (Model-View-Controller) is a framework by Microsoft for building dynamic, testable, and scalable web applications.
+
+It separates application logic into three main components:
+
+Model → Business logic & data.
+
+View → UI layer.
+
+Controller → Handles requests, orchestrates between Model & View.
+
+2. Key Features
+Separation of Concerns → Easier maintainability.
+
+Testability → Supports unit testing & dependency injection.
+
+Routing → URL patterns mapped to controllers/actions.
+
+Convention over Configuration → Reduces boilerplate.
+
+Filters → For cross-cutting concerns (auth, logging, caching).
+
+Strongly Typed Views → Razor syntax with IntelliSense.
+
+State Management → TempData, ViewData, ViewBag, Session.
+
+3. Lifecycle
+Request enters via Routing.
+
+Controller action executes.
+
+Action interacts with Model.
+
+Data passed to View.
+
+Response rendered back to client.
+
+4. Routing
+Default Route: {controller}/{action}/{id}
+
+Custom routes can be defined in RouteConfig.cs.
+
+Attribute Routing introduced in MVC 5: [Route("products/{id}")].
+
+5. Razor View Engine
+Lightweight syntax: @Model.Name, @Html.TextBoxFor().
+
+Supports layouts, partial views, and sections.
+
+6. State Management
+ViewData: Dictionary, weakly typed.
+
+ViewBag: Dynamic wrapper around ViewData.
+
+TempData: Persists across one redirect.
+
+Session: Server-side storage.
+
+7. Filters
+Authorization Filter → Security.
+
+Action Filter → Pre/post-processing.
+
+Result Filter → Modify result before rendering.
+
+Exception Filter → Handle errors globally.
+
+8. Security
+Authentication: Forms, Windows, OAuth.
+
+Authorization: Role-based, claims-based.
+
+Anti-Forgery Tokens: Prevent CSRF.
+
+Data Validation: Model validation attributes.
+
+9. Advanced Concepts
+Dependency Injection → Inversion of Control (IoC).
+
+Bundling & Minification → Optimize scripts/styles.
+
+Areas → Modularize large applications.
+
+Scaffolding → Auto-generate CRUD code.
+
+Entity Framework Integration → ORM for database access.
+
+10. Current Market Relevance
+ASP.NET MVC is widely used in enterprise apps, though ASP.NET Core MVC is now the modern standard.
+
+Companies still maintain legacy MVC apps, so knowledge of both is valuable.
+
+Interview focus: Routing, Filters, Security, State Management, EF integration, REST APIs, Authentication.
+
+🎯 25 Interview Questions & Answers (2 Years Experience, Market-Relevant)
+Core MVC
+Q: What is MVC architecture and why is it used?
+A: MVC separates concerns: Model (business/data), View (UI), Controller (request handling). It improves maintainability, scalability, and testability.
+
+Q: Difference between ASP.NET WebForms and MVC?
+A: WebForms → event-driven, ViewState, tightly coupled. MVC → lightweight, no ViewState, better testability, clean separation.
+
+Q: Explain Routing in MVC.
+A: Routing maps URLs to controller actions. Default route: {controller}/{action}/{id}. Attribute routing allows custom patterns.
+
+Q: What is Razor View Engine?
+A: Razor is a markup syntax for embedding server code in HTML. Example: @Model.Name. It’s lightweight and supports IntelliSense.
+
+Q: Difference between ViewData, ViewBag, and TempData?
+A: ViewData → dictionary, weakly typed. ViewBag → dynamic wrapper. TempData → persists across redirects.
+
+Filters & Security
+Q: Types of filters in MVC?
+A: Authorization, Action, Result, Exception filters.
+
+Q: How do you implement authentication in MVC?
+A: Forms authentication, Identity framework, OAuth, JWT in APIs.
+
+Q: What is CSRF and how to prevent it?
+A: Cross-Site Request Forgery. Prevent using @Html.AntiForgeryToken() and [ValidateAntiForgeryToken].
+
+Q: How do you handle exceptions globally?
+A: Using HandleErrorAttribute or custom exception filters.
+
+Q: Explain role-based authorization.
+A: [Authorize(Roles="Admin,Manager")] restricts access based on user roles.
+
+State & Performance
+Q: How do you manage state in MVC?
+A: ViewData, ViewBag, TempData, Session, Cookies.
+
+Q: What is Bundling and Minification?
+A: Bundling combines multiple files; Minification removes whitespace/comments. Improves performance.
+
+Q: How do you optimize an MVC application?
+A: Caching, async controllers, bundling, minification, database indexing.
+
+Q: Difference between Session and TempData?
+A: Session persists until timeout; TempData persists only for one redirect.
+
+Q: How do you implement caching in MVC?
+A: [OutputCache(Duration=60)] caches action results.
+
+Entity Framework & Data
+Q: How do you connect MVC with a database?
+A: Using Entity Framework (Code First, Database First). Define DbContext, DbSet, use LINQ queries.
+
+Q: Difference between Lazy Loading and Eager Loading in EF?
+A: Lazy → loads related data on demand. Eager → loads related data upfront using .Include().
+
+Q: How do you perform CRUD in MVC?
+A: Scaffold controllers/views with EF, or manually implement Create, Read, Update, Delete actions.
+
+Q: What is Dependency Injection in MVC?
+A: Injecting dependencies (services, repositories) via constructors. Improves testability and decoupling.
+
+Q: How do you implement Repository Pattern?
+A: Abstracts data access logic. Example: IRepository<T> with methods like GetAll(), Add(), Delete().
+
+Advanced & Market-Relevant
+Q: Difference between ASP.NET MVC and ASP.NET Core MVC?
+A: Core is cross-platform, lightweight, built-in DI, unified pipeline. Classic MVC is Windows-only, heavier.
+
+Q: How do you secure sensitive data in MVC apps?
+A: Encryption, HTTPS, secure cookies, Identity framework.
+
+Q: How do you implement REST APIs in MVC?
+A: Using Web API controllers, returning JSON/XML, attribute routing.
+
+Q: What is Middleware in ASP.NET Core?
+A: Components in request pipeline (auth, logging, routing). Not in classic MVC, but relevant for migration.
+
+Q: What are current trends in .NET development?
+A: Migration to ASP.NET Core, microservices, containerization (Docker/Kubernetes), cloud integration (Azure), Identity & JWT-based auth.
