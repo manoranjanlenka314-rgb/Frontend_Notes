@@ -1,0 +1,249 @@
+🔥 JavaScript Deep-Dive Interview Q&A (25)
+1. What is the difference between var, let, and const?
+Answer:
+
+var is function-scoped, hoisted, and allows redeclaration. This often leads to bugs because variables can be unintentionally overwritten.
+
+let is block-scoped, introduced in ES6, and prevents redeclaration in the same scope. It’s safer for loops and conditional blocks.
+
+const is also block-scoped but creates immutable bindings. The variable reference cannot be reassigned, though objects/arrays declared with const can still be mutated.
+
+Example:
+
+js
+var x = 10; 
+let y = 20; 
+const z = 30;
+Here, x can be redeclared, y can be reassigned but not redeclared, and z cannot be reassigned at all.
+
+2. Explain JavaScript’s event loop.
+Answer:  
+The event loop is the mechanism that allows JavaScript to handle asynchronous operations despite being single-threaded.
+
+Call Stack: Executes synchronous code.
+
+Web APIs: Handle async tasks (like setTimeout, fetch).
+
+Callback Queue: Stores callbacks waiting to be executed.
+
+Event Loop: Continuously checks if the call stack is empty, then pushes queued callbacks into the stack.
+This design enables non-blocking I/O and responsive UIs.
+
+3. What is hoisting in JavaScript?
+Answer:  
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
+
+Function declarations are fully hoisted (usable before definition).
+
+Variables declared with var are hoisted but initialized as undefined.
+
+let and const are hoisted but remain in the Temporal Dead Zone until initialized.
+Example:
+
+js
+console.log(a); // undefined
+var a = 5;
+4. Difference between synchronous and asynchronous code?
+Answer:
+
+Synchronous: Code executes line by line, blocking further execution until the current task finishes.
+
+Asynchronous: Tasks like API calls, timers, or file reads don’t block execution. They run in the background and notify the main thread when complete.
+Example:
+
+js
+console.log("Start");
+setTimeout(() => console.log("Async"), 1000);
+console.log("End");
+Output: Start → End → Async.
+
+5. What are closures?
+Answer:  
+A closure is created when a function retains access to variables from its lexical scope even after the outer function has finished executing.
+Example:
+
+js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+Closures are used for data privacy, memoization, and function factories.
+
+6. Explain prototypal inheritance.
+Answer:  
+JavaScript objects inherit properties and methods from a prototype chain.
+
+Every object has an internal link to another object called its prototype.
+
+Methods defined on Object.prototype are available to all objects.
+
+ES6 introduced class syntax, but under the hood, it’s still prototype-based.
+Example:
+
+js
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function() {
+  return "Hello " + this.name;
+};
+const p = new Person("Manoranjan");
+console.log(p.greet()); // Hello Manoranjan
+7. What is the difference between == and ===?
+Answer:
+
+== performs type coercion before comparison.
+
+=== checks both value and type strictly.
+Example:
+
+js
+5 == "5"; // true
+5 === "5"; // false
+8. Explain this keyword in JavaScript.
+Answer:
+
+In global scope, this refers to the global object (window in browsers).
+
+Inside an object method, this refers to the object.
+
+In strict mode, this in functions is undefined.
+
+Arrow functions don’t bind their own this; they inherit from the enclosing scope.
+Example:
+
+js
+const obj = {
+  name: "JS",
+  greet: function() { console.log(this.name); }
+};
+obj.greet(); // JS
+9. What are promises?
+Answer:  
+Promises represent the eventual completion or failure of an asynchronous operation.
+States: Pending → Fulfilled → Rejected.
+Example:
+
+js
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Done!"), 1000);
+});
+promise.then(result => console.log(result));
+10. Difference between null and undefined?
+Answer:
+
+undefined: A variable declared but not assigned.
+
+null: Explicitly assigned to indicate "no value".
+Example:
+
+js
+let a;
+console.log(a); // undefined
+let b = null;
+console.log(b); // null
+11. Explain async/await.
+Answer:  
+async/await is syntactic sugar over promises.
+
+async marks a function that returns a promise.
+
+await pauses execution until the promise resolves.
+Example:
+
+js
+async function fetchData() {
+  let data = await fetch("url");
+  return data.json();
+}
+12. What is the difference between for...in and for...of?
+Answer:
+
+for...in: Iterates over enumerable properties of an object.
+
+for...of: Iterates over iterable values (arrays, strings, maps).
+Example:
+
+js
+for (let key in obj) { ... }
+for (let value of arr) { ... }
+13. Explain JavaScript modules.
+Answer:  
+Modules allow code organization and reuse.
+
+ES6 introduced import and export.
+
+Example:
+
+js
+// math.js
+export function add(a,b){ return a+b; }
+// main.js
+import { add } from './math.js';
+14. What is debouncing and throttling?
+Answer:
+
+Debouncing: Ensures a function runs only after a certain time has passed since the last call. Useful for search inputs.
+
+Throttling: Ensures a function runs at most once in a given interval. Useful for scroll events.
+
+15. Explain garbage collection in JavaScript.
+Answer:  
+JavaScript uses automatic garbage collection.
+
+Objects no longer reachable are removed from memory.
+
+Reference counting and mark-and-sweep algorithms are common.
+
+16. What is the difference between shallow copy and deep copy?
+Answer:
+
+Shallow copy: Copies only references of nested objects.
+
+Deep copy: Creates entirely new objects recursively.
+Example:
+
+js
+let obj = {a:1, b:{c:2}};
+let shallow = {...obj};
+let deep = JSON.parse(JSON.stringify(obj));
+17. Explain event delegation.
+Answer:  
+Event delegation allows attaching a single event listener to a parent element to handle events on its children.
+Example:
+
+js
+document.getElementById("list").addEventListener("click", e => {
+  if(e.target.tagName === "LI") console.log(e.target.textContent);
+});
+18. What are generators?
+Answer:  
+Generators are functions that can pause and resume execution using yield.
+Example:
+
+js
+function* gen() {
+  yield 1;
+  yield 2;
+}
+const g = gen();
+console.log(g.next().value); // 1
+19. Explain immutability in JavaScript.
+Answer:  
+Primitive values are immutable (string, number). Objects and arrays are mutable.
+Immutability can be enforced using Object.freeze().
+
+20. What is the difference between map, filter, and reduce?
+Answer:
+
+map: Transforms each element.
+
+filter: Returns elements that satisfy a condition.
+
+reduce: Accumulates values into a single result.
