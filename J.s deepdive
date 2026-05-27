@@ -1,0 +1,94 @@
+JavaScript remains the most in-demand programming language in 2026, powering web apps, backend services, and modern frameworks like React, Angular, and Node.js. Interviewers now focus heavily on ES2020+ features (optional chaining, nullish coalescing, Promise.any, structuredClone, private class fields) alongside core concepts like closures, async/await, and event loop behavior.
+
+📘 Brief Note on JavaScript (2026 Market Context)
+Popularity & Demand: JavaScript has been the most-used language for 14 consecutive years, with 66% of developers using it daily. Demand for JS developers continues to grow, with salaries averaging $111,000+ globally.
+
+Modern Features: ES2020+ introduced optional chaining, nullish coalescing, Promise.allSettled, structuredClone, Object.groupBy, immutable array methods (toSorted, toReversed), and private class fields. These are now standard in interviews.
+
+Core Concepts Still Tested: Closures, prototypes, event loop, async/await, and DOM APIs remain critical.
+
+Industry Trends:
+
+Heavy adoption of TypeScript (78% of JS developers).
+
+Performance optimization patterns like debouncing, throttling, memoization are frequently asked.
+
+Security awareness (XSS, CSRF in JS apps) is increasingly part of interviews.
+
+🎯 24 JavaScript Interview Q&A (2026 Market-Relevant)
+Core Concepts
+Difference between var, let, and const?  
+var is function-scoped, let and const are block-scoped. const prevents reassignment. Modern JS avoids var.
+
+What is a closure?  
+A closure is a function that retains access to variables in its outer scope even after that scope has finished execution.
+
+Explain the event loop.  
+JS is single-threaded; the event loop manages async tasks. Microtasks (Promises) run before macrotasks (setTimeout).
+
+What is prototypal inheritance?  
+Objects inherit directly from other objects via the prototype chain, unlike classical inheritance.
+
+Explain hoisting.  
+Variable and function declarations are moved to the top of scope during compilation.
+
+Difference between == and ===?  
+== allows type coercion, === checks both value and type strictly.
+
+Async & ES2020+
+What is Promise.any()?  
+Resolves with the first fulfilled promise; rejects only if all fail.
+
+Explain async/await.  
+Syntactic sugar over Promises, making async code look synchronous.
+
+What is AbortController?  
+API to cancel fetch or async tasks.
+
+Difference between Promise.all vs Promise.allSettled?  
+all fails if one rejects; allSettled waits for all to finish regardless of outcome.
+
+What is structuredClone()?  
+Deeply clones objects, including complex types like Map, Set, and File.
+
+Explain nullish coalescing (??).  
+Returns the right-hand operand only if the left-hand is null or undefined.
+
+Performance & Patterns
+What is debouncing?  
+Delays function execution until after a pause in events (e.g., typing).
+
+What is throttling?  
+Ensures a function runs at fixed intervals, regardless of event frequency.
+
+Explain memoization.  
+Caching function results to avoid recomputation.
+
+Difference between deep clone vs shallow clone?  
+Shallow copies references; deep clone copies nested objects too.
+
+DOM & Browser APIs
+What is event delegation?  
+Attaching a single event listener to a parent element to manage child events.
+
+Explain shadow DOM.  
+Encapsulation mechanism for web components, isolating styles and markup.
+
+Difference between localStorage and sessionStorage?  
+Both store key-value pairs; localStorage persists across sessions, sessionStorage clears on tab close.
+
+What is the difference between synchronous and asynchronous code in JS?  
+Sync code blocks execution; async code allows non-blocking operations.
+
+Modern JS & Security
+What are private class fields?  
+Declared with #, accessible only within the class.
+
+Explain Object.groupBy().  
+Groups array elements into an object based on a callback function.
+
+What is XSS in JavaScript?  
+Cross-Site Scripting: malicious scripts injected into web apps. Prevented via sanitization.
+
+What is CSRF in JavaScript apps?  
+Cross-Site Request Forgery: attacker tricks user into executing unwanted actions. Prevented via tokens.
