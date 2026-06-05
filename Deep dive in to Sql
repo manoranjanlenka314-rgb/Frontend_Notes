@@ -1,0 +1,138 @@
+Structured Query Language (SQL) is the standard language used to interact with relational databases. It allows developers and database administrators to create, read, update, and delete (CRUD) data, as well as manage database structures and permissions. SQL is declarative, meaning you specify what you want, and the database engine decides how to execute it.
+
+🔑 Core Concepts
+Data Definition Language (DDL): Commands like CREATE, ALTER, DROP define schema objects (tables, views, indexes).
+
+Data Manipulation Language (DML): Commands like INSERT, UPDATE, DELETE, SELECT manipulate data.
+
+Data Control Language (DCL): Commands like GRANT, REVOKE manage permissions.
+
+Transaction Control Language (TCL): Commands like COMMIT, ROLLBACK, SAVEPOINT handle transactions.
+
+⚙️ Key Features
+Relational Model: Data stored in tables with rows and columns.
+
+Constraints: Ensure data integrity (PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, NOT NULL).
+
+Joins: Combine data across multiple tables (INNER, LEFT, RIGHT, FULL).
+
+Indexes: Improve query performance.
+
+Stored Procedures & Functions: Encapsulate logic for reuse.
+
+Views: Virtual tables based on queries.
+
+Normalization: Organizing data to reduce redundancy.
+
+Transactions: Ensure atomicity, consistency, isolation, durability (ACID).
+
+🚀 Modern SQL Usage
+Widely used in MySQL, SQL Server, PostgreSQL, Oracle.
+
+Supports window functions, CTEs, JSON data types in advanced versions.
+
+Essential for backend development, data analysis, and reporting.
+
+🎯 20 Interview-Based SQL Q&A
+1. What is SQL and why is it important?
+SQL is a language for managing relational databases. It’s important because it provides a standardized way to query and manipulate data, ensuring consistency across different systems.
+
+2. Differentiate between DDL, DML, DCL, and TCL.
+DDL: Defines schema (CREATE TABLE).
+
+DML: Manipulates data (INSERT INTO).
+
+DCL: Controls access (GRANT).
+
+TCL: Manages transactions (COMMIT).
+
+3. What is a Primary Key vs. Unique Key?
+Primary Key: Uniquely identifies each row, cannot be NULL.
+
+Unique Key: Ensures uniqueness but allows one NULL.
+
+4. Explain Foreign Key with an example.
+A foreign key links one table to another. Example: Orders.CustomerID references Customers.CustomerID.
+
+5. What are Joins? Name types.
+Joins combine rows from multiple tables:
+
+INNER JOIN
+
+LEFT JOIN
+
+RIGHT JOIN
+
+FULL OUTER JOIN
+
+CROSS JOIN
+
+6. Difference between WHERE and HAVING.
+WHERE: Filters rows before grouping.
+
+HAVING: Filters groups after aggregation.
+
+7. What is Normalization?
+Process of structuring data to reduce redundancy and improve integrity. Example: splitting customer addresses into a separate table.
+
+8. Explain Denormalization.
+Opposite of normalization—adding redundancy for faster reads, often used in reporting systems.
+
+9. What are Indexes?
+Indexes speed up data retrieval. Example: CREATE INDEX idx_name ON Employees(Name);
+
+10. Clustered vs. Non-Clustered Index.
+Clustered: Sorts and stores rows physically.
+
+Non-Clustered: Creates a separate structure pointing to data.
+
+11. What is a View?
+A virtual table based on a query. Example: CREATE VIEW ActiveCustomers AS SELECT * FROM Customers WHERE Status='Active';
+
+12. Difference between DELETE, TRUNCATE, DROP.
+DELETE: Removes rows, can be rolled back.
+
+TRUNCATE: Removes all rows, faster, minimal logging.
+
+DROP: Removes entire table structure.
+
+13. Explain ACID properties.
+Atomicity: All or nothing.
+
+Consistency: Valid state maintained.
+
+Isolation: Transactions don’t interfere.
+
+Durability: Changes persist after commit.
+
+14. What is a Stored Procedure?
+Precompiled SQL code stored in the database. Example: CREATE PROCEDURE GetCustomers AS SELECT * FROM Customers;
+
+15. Difference between Function and Procedure.
+Function: Returns a value, can be used in queries.
+
+Procedure: Executes logic, may not return a value.
+
+16. What is a Trigger?
+Automatic execution of SQL code in response to events like INSERT, UPDATE, or DELETE.
+
+17. Explain CTE (Common Table Expression).
+Temporary result set defined with WITH. Example:
+
+sql
+WITH SalesCTE AS (SELECT CustomerID, SUM(Amount) AS Total FROM Sales GROUP BY CustomerID)
+SELECT * FROM SalesCTE WHERE Total > 1000;
+18. Difference between UNION and UNION ALL.
+UNION: Removes duplicates.
+
+UNION ALL: Keeps duplicates.
+
+19. What is a Window Function?
+Functions like ROW_NUMBER(), RANK(), LEAD(), LAG() used for advanced analytics over partitions.
+
+20. Explain SQL Injection.
+A security vulnerability where malicious input alters queries. Example:
+
+sql
+SELECT * FROM Users WHERE Username=' ' OR '1'='1';
+Prevented using parameterized queries.
