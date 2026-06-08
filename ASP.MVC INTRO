@@ -1,0 +1,90 @@
+ASP.NET MVC (Model–View–Controller) is a framework by Microsoft for building dynamic, testable, and scalable web applications. It separates concerns into:
+
+Model → Business logic & data
+
+View → UI rendering
+
+Controller → Handles requests, processes input, and returns responses
+
+Key features:
+
+Clear separation of concerns
+
+Built-in routing system
+
+Support for unit testing
+
+Extensible (filters, dependency injection, custom helpers)
+
+Works well with modern front-end libraries
+
+🎯 20 ASP.NET MVC Interview Q&A
+Basics
+Q: What is ASP.NET MVC?
+A: It’s a framework that implements the MVC design pattern, allowing developers to build web apps with separation of concerns. The controller handles requests, the model manages data, and the view renders UI.
+
+Q: Difference between ASP.NET WebForms and MVC?
+A: WebForms use event-driven, page lifecycle with ViewState; MVC is lightweight, stateless, and gives more control over HTML, CSS, and JavaScript.
+
+Q: What is Routing in MVC?
+A: Routing maps incoming URLs to controller actions. Example: routes.MapRoute("Default", "{controller}/{action}/{id}").
+
+Q: Explain the role of Controller.
+A: Controller receives requests, interacts with the model, and returns a view or data (like JSON).
+
+Q: What is Razor View Engine?
+A: Razor is a templating engine that allows embedding C# code into HTML using @ syntax.
+
+Intermediate
+Q: What are Action Filters?
+A: Attributes applied to controllers/actions to run logic before/after execution (e.g., [Authorize], [HandleError]).
+
+Q: What is TempData vs ViewData vs ViewBag?
+A:
+
+ViewData: Dictionary, lasts for one request.
+
+ViewBag: Dynamic wrapper around ViewData.
+
+TempData: Persists across redirects (uses session).
+
+Q: How does Model Binding work?
+A: It automatically maps HTTP request data (form, query string, route) to action method parameters.
+
+Q: What is Dependency Injection in MVC?
+A: Injecting services into controllers instead of hardcoding dependencies, improving testability and flexibility.
+
+Q: Explain Areas in MVC.
+A: Areas partition large applications into smaller functional sections (e.g., Admin, User), each with its own controllers/views.
+
+Advanced
+Q: How do you implement Authentication in MVC?
+A: Using ASP.NET Identity, OAuth, or custom cookie-based authentication with [Authorize] attribute.
+
+Q: What is Bundling and Minification?
+A: Bundling combines multiple files into one; minification reduces file size by removing whitespace/comments. Improves performance.
+
+Q: How do you handle exceptions in MVC?
+A: Using try-catch, custom error pages, or global filters like [HandleError].
+
+Q: What is Partial View?
+A: A reusable view component rendered inside another view using Html.Partial() or Html.RenderPartial().
+
+Q: How does AJAX work in MVC?
+A: AJAX calls controllers asynchronously, often returning JSON, which updates parts of the page without full reload.
+
+Practical Scenarios
+Q: How do you return JSON from a controller?
+A: Use return Json(data, JsonRequestBehavior.AllowGet);.
+
+Q: What is the difference between ActionResult and JsonResult?
+A: ActionResult is a base class for multiple return types (View, Redirect, JSON). JsonResult specifically returns JSON data.
+
+Q: How do you implement pagination in MVC?
+A: Use LINQ with Skip() and Take(), or integrate libraries like DataTables for client-side pagination.
+
+Q: How do you secure sensitive data in MVC apps?
+A: Use HTTPS, anti-forgery tokens (@Html.AntiForgeryToken()), input validation, and proper authentication/authorization.
+
+Q: How do you test controllers in MVC?
+A: By mocking dependencies (using Moq/NUnit), verifying returned ActionResult, and checking routing behavior.
