@@ -1,0 +1,91 @@
+ASP.NET Core MVC is the modern, cross‑platform framework from Microsoft for building web apps. It’s lightweight, modular, and runs on Windows, Linux, and macOS.
+
+Built on .NET Core (open source, high performance).
+
+Uses the same Model–View–Controller pattern as classic MVC.
+
+Supports dependency injection out of the box.
+
+Unified pipeline for MVC + Web API (no separate frameworks).
+
+Middleware replaces the old HttpModules/Handlers.
+
+🔗 Web API + AJAX — Brief Intro
+ASP.NET Core integrates Web API into MVC. Controllers can return JSON/XML directly, making them perfect for AJAX calls.
+
+AJAX (Asynchronous JavaScript and XML) lets you call APIs without refreshing the page.
+
+Commonly used with jQuery AJAX or Fetch API.
+
+Typical flow: View → JavaScript AJAX → Controller (Web API) → JSON → Update DOM.
+
+🎯 20 Interview Q&A (Core MVC + Web API + AJAX)
+Fundamentals
+Q: What is ASP.NET Core MVC?
+A: A cross‑platform framework that combines MVC and Web API into one unified programming model, built on .NET Core.
+
+Q: Difference between ASP.NET MVC and Core MVC?
+A: Core MVC is cross‑platform, modular, uses middleware, and merges Web API + MVC. Classic MVC is Windows‑only and heavier.
+
+Q: What is Middleware in ASP.NET Core?
+A: Components in the request pipeline (e.g., authentication, routing, logging). Configured in Startup.cs.
+
+Q: How does Routing work in Core MVC?
+A: Uses attribute routing ([Route("api/products")]) or conventional routing in UseEndpoints.
+
+Q: What is Dependency Injection in Core?
+A: Built‑in DI container allows injecting services into controllers via constructor injection.
+
+Web API
+Q: How do you create a Web API in Core MVC?
+A: Create a controller inheriting from ControllerBase or Controller, decorate with [ApiController], and define actions returning JSON.
+
+Q: What is [ApiController] attribute?
+A: Enables automatic model validation, binding, and better error responses for Web API controllers.
+
+Q: How do you return JSON in Core MVC?
+A: Simply return an object; Core automatically serializes it to JSON using System.Text.Json.
+
+Q: Difference between Controller and ControllerBase?
+A: Controller supports views + API; ControllerBase is lightweight, only for APIs (no view support).
+
+Q: How do you secure Web APIs?
+A: Use JWT tokens, OAuth, or cookie authentication with [Authorize].
+
+AJAX Integration
+Q: How does AJAX call a Web API?
+A: JavaScript sends an HTTP request ($.ajax or fetch) to API endpoint, receives JSON, and updates UI dynamically.
+
+Q: Example of jQuery AJAX call?
+A:
+
+javascript
+$.ajax({
+  url: '/api/products',
+  type: 'GET',
+  success: function(data){ console.log(data); }
+});
+Q: How do you handle AJAX POST in Core MVC?
+A: Controller action with [HttpPost] receives JSON body, model binding maps it to C# object.
+
+Q: What is the role of JsonResult?
+A: Explicitly returns JSON data from controller, though Core automatically serializes objects.
+
+Q: How do you prevent CSRF in AJAX calls?
+A: Use anti‑forgery tokens (@Html.AntiForgeryToken()), validate with [ValidateAntiForgeryToken].
+
+Advanced
+Q: How do you implement pagination with AJAX + Web API?
+A: API returns paged data (Skip/Take in LINQ). AJAX updates table dynamically (e.g., DataTables plugin).
+
+Q: How do you handle errors in AJAX calls?
+A: Use error: callback in jQuery or .catch() in fetch, and return proper HTTP status codes from API.
+
+Q: What is CORS in Web API?
+A: Cross‑Origin Resource Sharing allows API to be called from different domains. Configured via services.AddCors().
+
+Q: How do you test Web API endpoints?
+A: Use tools like Postman, Swagger, or unit tests with mocked HttpClient.
+
+Q: How do you optimize performance in Core MVC APIs?
+A: Use async/await, caching, response compression, and minimize payload size.
