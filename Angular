@@ -1,0 +1,105 @@
+Angular is a modern, TypeScript-based framework maintained by Google for building dynamic, scalable single-page applications (SPAs). It emphasizes a component-driven architecture, two-way data binding, dependency injection, and powerful tools like Angular CLI and DevTools, making it one of the most widely used frameworks for enterprise-grade web apps. 
+
+📘 Brief Note on Angular
+Origin: AngularJS (2010) → rewritten as Angular 2+ (2016) for performance and modularity.
+
+Language: Built with TypeScript, offering static typing and better tooling.
+
+Architecture: Component-based, encapsulating HTML, CSS, and logic.
+
+Key Features:
+
+Two-way data binding: Syncs model and view automatically.
+
+Dependency Injection: Promotes modularity and testability.
+
+Directives: Extend HTML with custom behaviors.
+
+Routing: Built-in navigation for SPAs.
+
+Angular CLI: Rapid setup, testing, and deployment.
+
+Server-side rendering (SSR) and lazy loading for performance.
+
+Use Cases: Enterprise dashboards, e-commerce platforms, content management systems, and large-scale SPAs.
+
+📝 25 Angular Interview Q&A
+Basics
+Q: What is Angular?  
+A: Angular is a TypeScript-based open-source framework by Google for building dynamic SPAs with a component-driven architecture.
+
+Q: Difference between AngularJS and Angular?  
+A: AngularJS used controllers and scopes; Angular uses components, TypeScript, and improved performance with modularity.
+
+Q: Why use TypeScript in Angular?  
+A: TypeScript provides static typing, interfaces, generics, and better tooling, reducing runtime errors.
+
+Q: What is a Component?  
+A: A building block in Angular that encapsulates template (HTML), styles (CSS), and logic (TypeScript).
+
+Q: What are Directives?  
+A: Special markers in templates that extend HTML behavior (e.g., *ngIf, *ngFor).
+
+Data & Binding
+Q: Explain two-way data binding.  
+A: Synchronizes data between model and view using [(ngModel)].
+
+Q: Difference between property binding and event binding?  
+A: Property binding [ ] passes data to DOM; event binding ( ) listens to events.
+
+Q: What are Pipes in Angular?  
+A: Transform displayed data (e.g., date, currency, custom pipes).
+
+Q: What is Reactive Forms vs Template-driven Forms?  
+A: Reactive forms use explicit form models in TypeScript; template-driven forms rely on directives in HTML.
+
+Q: What is Change Detection?  
+A: Angular’s mechanism to update the view when data changes.
+
+Architecture & Services
+Q: What is Dependency Injection (DI)?  
+A: A design pattern where services are injected into components, promoting modularity.
+
+Q: What are Angular Modules?  
+A: Containers for components, directives, and services (@NgModule).
+
+Q: What is a Service in Angular?  
+A: A class that provides reusable logic, often injected via DI.
+
+Q: What is Routing in Angular?  
+A: Navigation between views using RouterModule.
+
+Q: What is Lazy Loading?  
+A: Loading modules only when needed, improving performance.
+
+Advanced
+Q: What is Angular CLI?  
+A: Command-line tool for scaffolding, building, testing, and deploying apps.
+
+Q: What is Ahead-of-Time (AOT) Compilation?  
+A: Compiles templates at build time, improving performance and reducing runtime errors.
+
+Q: What is Angular Universal?  
+A: Enables server-side rendering for better SEO and faster initial load.
+
+Q: What are Guards in Angular Routing?  
+A: Functions controlling navigation (e.g., CanActivate, CanDeactivate).
+
+Q: What is Zone.js in Angular?  
+A: A library that tracks asynchronous operations for change detection.
+
+Performance & Testing
+Q: How does Angular handle testing?  
+A: Built-in support with Jasmine, Karma, and TestBed for unit and integration tests.
+
+Q: What is Tree Shaking in Angular?  
+A: Removes unused code during build for smaller bundles.
+
+Q: How to optimize Angular performance?  
+A: Use lazy loading, AOT, OnPush change detection, and trackBy in *ngFor.
+
+Q: What is RxJS in Angular?  
+A: Reactive programming library for handling asynchronous data streams.
+
+Q: What is Ivy Renderer?  
+A: Angular’s rendering engine that improves build speed, debugging, and bundle size.
