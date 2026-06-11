@@ -1,0 +1,113 @@
+Definition: jQuery is a fast, lightweight, cross-platform JavaScript library designed to simplify HTML DOM manipulation, event handling, animation, and AJAX interactions.
+
+Key Features:
+
+DOM traversal and manipulation with simple selectors ($("#id"), $(".class")).
+
+Event handling (.click(), .on()).
+
+AJAX support ($.ajax(), $.get(), $.post()).
+
+Effects and animations (.hide(), .fadeIn(), .slideToggle()).
+
+Cross-browser compatibility.
+
+Advantages:
+
+Reduces boilerplate JavaScript code.
+
+Provides chainable methods.
+
+Large plugin ecosystem.
+
+Limitations:
+
+Adds extra dependency (not needed in modern JS frameworks).
+
+Vanilla JS and frameworks (React, Angular, Vue) often replace it.
+
+❓ 25 Deep-Dive Q&A on jQuery
+Basics
+Q: What is jQuery and why was it created?  
+A: jQuery is a JavaScript library created to simplify DOM manipulation, event handling, and AJAX. It abstracts browser inconsistencies and provides a concise API.
+
+Q: How do you include jQuery in a project?  
+A: Either via CDN (<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>) or by downloading and hosting locally.
+
+Q: What is the difference between $(document).ready() and window.onload?  
+A: $(document).ready() executes when the DOM is fully loaded, while window.onload waits for all resources (images, scripts) to load.
+
+Q: Explain the $ symbol in jQuery.  
+A: $ is just an alias for the jQuery function. It’s used to select elements and apply methods.
+
+Q: What is chaining in jQuery?  
+A: Chaining allows multiple methods to be called on the same selection in one line, e.g., $("#box").css("color","red").slideUp().slideDown();.
+
+Selectors & DOM
+Q: How does jQuery select elements differently from JavaScript?  
+A: jQuery uses CSS-like selectors ($(".class"), $("#id")) instead of verbose JS methods like document.getElementById.
+
+Q: Difference between .find() and .children()?  
+A: .find() searches all descendants, .children() only searches direct children.
+
+Q: How do you get or set text and HTML content?  
+A: .text() for plain text, .html() for HTML markup.
+
+Q: How do you add/remove classes dynamically?  
+A: .addClass("className"), .removeClass("className"), .toggleClass("className").
+
+Q: How do you manipulate attributes in jQuery?  
+A: .attr("attributeName") to get, .attr("attributeName","value") to set.
+
+Events
+Q: How do you bind events in jQuery?  
+A: Using .on("event", selector, handler) or shorthand methods like .click(handler).
+
+Q: Difference between .bind(), .live(), .delegate(), and .on()?  
+A: .on() is the modern unified method. .bind() attaches directly, .live() was deprecated, .delegate() attaches to parent for dynamic elements.
+
+Q: How do you prevent default behavior in jQuery?  
+A: Use event.preventDefault() inside the handler.
+
+Q: How do you stop event bubbling?  
+A: Use event.stopPropagation().
+
+Q: How do you trigger an event manually?  
+A: .trigger("eventName").
+
+AJAX
+Q: How do you make an AJAX call in jQuery?  
+A: Using $.ajax({url:"/api", type:"GET", success:function(data){}});.
+
+Q: Difference between $.ajax(), $.get(), and $.post()?  
+A: $.ajax() is the most flexible, $.get() and $.post() are shorthand for GET and POST requests.
+
+Q: How do you handle JSON data in jQuery AJAX?  
+A: Set dataType:"json" in $.ajax() and access parsed JSON in the success callback.
+
+Q: How do you handle AJAX errors?  
+A: Use the error callback in $.ajax() or .fail() with promises.
+
+Q: How do you load content into a div using jQuery?  
+A: $("#div").load("file.html");.
+
+Effects & Plugins
+Q: How do you hide/show elements in jQuery?  
+A: .hide(), .show(), .toggle().
+
+Q: Difference between .fadeIn() and .slideDown()?  
+A: .fadeIn() changes opacity, .slideDown() changes height.
+
+Q: How do you animate CSS properties?  
+A: .animate({width:"200px",opacity:0.5},1000);.
+
+Q: What are jQuery plugins?  
+A: Reusable code modules built on jQuery to extend functionality (e.g., sliders, modals).
+
+Q: How do you create a custom plugin in jQuery?  
+A: Extend $.fn with a function:
+
+js
+$.fn.highlight = function() {
+  this.css("background","yellow");
+  return this;
