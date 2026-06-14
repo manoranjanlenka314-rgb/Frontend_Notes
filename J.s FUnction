@@ -1,0 +1,116 @@
+A function in JavaScript is a reusable block of code designed to perform a specific task. Functions help organize code, avoid repetition, and improve readability. They can take parameters (inputs), perform operations, and return values (outputs).
+
+Types of functions in JS:
+
+Function Declaration
+
+Function Expression
+
+Arrow Functions
+
+Anonymous Functions
+
+Immediately Invoked Function Expressions (IIFE)
+
+Functions are first-class citizens in JS, meaning they can be assigned to variables, passed as arguments, and returned from other functions.
+
+🎯 20 Interview-Based Q&A on JavaScript Functions
+Basics
+Q: What is a function in JavaScript?
+A: A function is a block of code that performs a specific task. It can take inputs (parameters) and return outputs. Functions help in modular programming and code reuse.
+
+Q: Difference between function declaration and function expression?
+A:
+
+Declaration: Hoisted, can be called before definition.
+
+Expression: Not hoisted, must be defined before use.
+
+Q: What are arrow functions?
+A: Arrow functions are a shorter syntax for writing functions. They don’t have their own this, arguments, or super, making them useful in callbacks and functional programming.
+
+Q: What is an IIFE?
+A: Immediately Invoked Function Expression is a function that runs as soon as it is defined. Syntax:
+
+js
+(function() { console.log("IIFE runs!"); })();
+Q: What is the difference between return and console.log in a function?
+A: return sends a value back to the caller, while console.log just prints output to the console.
+
+Advanced Concepts
+Q: Explain function hoisting in JavaScript.
+A: Function declarations are hoisted to the top of their scope, meaning they can be called before being defined. Function expressions are not hoisted.
+
+Q: What is the difference between call(), apply(), and bind()?
+A:
+
+call() → Invokes function with arguments passed individually.
+
+apply() → Invokes function with arguments passed as an array.
+
+bind() → Returns a new function with a fixed this context.
+
+Q: What is a higher-order function?
+A: A function that takes another function as an argument or returns a function. Example: map, filter, reduce.
+
+Q: What is a callback function?
+A: A function passed as an argument to another function, executed later. Common in asynchronous operations.
+
+Q: Difference between synchronous and asynchronous functions?
+A:
+
+Synchronous: Executes line by line, blocking further execution.
+
+Asynchronous: Executes without blocking, often using callbacks, promises, or async/await.
+
+Closures & Scope
+Q: What is a closure in JavaScript?
+A: A closure is a function that remembers variables from its outer scope even after the outer function has finished executing.
+
+Q: Why are closures important?
+A: They enable data privacy, stateful functions, and functional programming patterns.
+
+Q: Example of closure usage?
+A:
+
+js
+function counter() {
+  let count = 0;
+  return function() { return ++count; };
+}
+const inc = counter();
+console.log(inc()); // 1
+console.log(inc()); // 2
+Q: Difference between local and global scope in functions?
+A: Variables declared inside a function are local (accessible only within the function). Global variables are accessible everywhere.
+
+Q: What is lexical scope?
+A: Lexical scope means a function’s scope is determined by its physical location in the code. Inner functions can access variables of outer functions.
+
+Practical & Interview-Oriented
+Q: How do default parameters work in functions?
+A: Default values can be assigned to parameters if no argument is passed.
+
+js
+function greet(name="Guest") { return "Hello " + name; }
+Q: What is recursion in functions?
+A: A function calling itself until a base condition is met. Example: factorial calculation.
+
+Q: What is the difference between pure and impure functions?
+A:
+
+Pure: Always returns the same output for the same input, no side effects.
+
+Impure: May depend on external state or cause side effects.
+
+Q: How does this behave inside functions?
+A: In regular functions, this depends on how the function is called. In arrow functions, this is inherited from the enclosing scope.
+
+Q: What is function currying?
+A: Breaking down a function with multiple arguments into a series of functions each taking one argument.
+
+js
+function add(a) {
+  return function(b) { return a + b; };
+}
+console.log(add(2)(3)); // 5
