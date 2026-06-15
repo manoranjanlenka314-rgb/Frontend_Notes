@@ -1,0 +1,121 @@
+Object‑Oriented Programming in JavaScript revolves around creating reusable, modular, and maintainable code by modeling real‑world entities as objects. Key concepts:
+
+Objects: Collections of properties (data) and methods (behavior).
+
+Classes: ES6 introduced class syntax to define blueprints for objects.
+
+Constructors: Special methods used to initialize object instances.
+
+Inheritance: Mechanism to extend functionality from one class to another (extends keyword).
+
+Encapsulation: Bundling data and methods together; controlling access with private fields (#field) or closures.
+
+Polymorphism: Ability of methods to take different forms (method overriding or overloading behavior).
+
+Abstraction: Hiding implementation details and exposing only necessary functionality.
+
+Prototypes: Before ES6 classes, inheritance was achieved via prototype chains.
+
+this keyword: Refers to the current object context; behavior depends on how a function is called.
+
+Static methods/properties: Belong to the class itself, not instances.
+
+🎯 25 Interview‑Based Q&A on JavaScript OOP
+Basics
+Q: What is OOP in JavaScript?
+A: OOP in JS is a paradigm where code is organized into objects containing properties and methods. It allows modularity, reusability, and abstraction, implemented via prototypes or ES6 classes.
+
+Q: How do you create a class in JavaScript?
+A: Using the class keyword:
+
+js
+class Person {
+  constructor(name) { this.name = name; }
+  greet() { return `Hello, ${this.name}`; }
+}
+Q: What is the difference between a class and an object?
+A: A class is a blueprint; an object is an instance created from that blueprint.
+
+Q: Explain the role of the constructor in a class.
+A: The constructor initializes object properties when a new instance is created.
+
+Q: How is encapsulation achieved in JavaScript?
+A: Using private fields (#field), closures, or restricting property access via getters/setters.
+
+Inheritance & Prototypes
+Q: How does inheritance work in JavaScript?
+A: With extends keyword in classes or prototype chaining in older JS.
+
+Q: What is the prototype chain?
+A: A chain of objects used to resolve property/method lookups. If not found in the object, JS looks up its prototype until reaching Object.prototype.
+
+Q: Difference between classical inheritance and prototypal inheritance?
+A: Classical uses classes and hierarchies; prototypal uses objects directly as prototypes.
+
+Q: How do you override a method in a subclass?
+A: Define the same method name in the subclass; it replaces the parent’s implementation.
+
+Q: What is super keyword used for?
+A: To call parent class constructor or methods inside a subclass.
+
+Advanced Concepts
+Q: Explain polymorphism in JavaScript.
+A: Achieved via method overriding (same method name, different behavior in subclass).
+
+Q: What is abstraction in JS OOP?
+A: Hiding implementation details, exposing only necessary methods. Often achieved via abstract base classes or interfaces (conceptually, since JS doesn’t have native interfaces).
+
+Q: How do you define static methods?
+A: Using static keyword inside a class. They belong to the class, not instances.
+
+Q: What is the difference between instance methods and static methods?
+A: Instance methods are tied to objects; static methods are tied to the class itself.
+
+Q: How do private fields work in ES6 classes?
+A: Declared with # prefix, accessible only inside the class.
+
+Practical Scenarios
+Q: How would you implement encapsulation without private fields?
+A: Using closures:
+
+js
+function Counter() {
+  let count = 0;
+  this.increment = () => ++count;
+  this.getCount = () => count;
+}
+Q: Why is this keyword tricky in JavaScript?
+A: Its value depends on how a function is invoked (object method, standalone, arrow function, event handler).
+
+Q: How do arrow functions affect this?
+A: Arrow functions don’t bind their own this; they inherit it from the enclosing scope.
+
+Q: Can JavaScript simulate multiple inheritance?
+A: Not directly, but mixins can be used to copy properties/methods into classes.
+
+Q: What are mixins?
+A: Functions that add reusable behaviors to classes without formal inheritance.
+
+Interview‑Style Deep Dives
+Q: How would you design a Shape class hierarchy?
+A: Base Shape class with draw() method; subclasses like Circle, Rectangle override draw().
+
+Q: How do you implement method chaining in JS OOP?
+A: Return this from methods:
+
+js
+class Builder {
+  setName(name) { this.name = name; return this; }
+}
+Q: What is the difference between Object.create() and class syntax?
+A: Object.create() directly sets prototype; class provides syntactic sugar for constructor/prototype pattern.
+
+Q: How do you enforce abstraction in JS?
+A: By throwing errors in base class methods that must be overridden:
+
+js
+class Animal {
+  speak() { throw new Error("Must override"); }
+}
+Q: Why is OOP important in large‑scale JS applications?
+A: It improves maintainability, scalability, and readability by organizing code into modular, reusable components.
