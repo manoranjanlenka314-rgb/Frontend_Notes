@@ -1,0 +1,118 @@
+React is a JavaScript library developed by Facebook for building user interfaces, especially single-page applications (SPAs). It focuses on creating reusable UI components that efficiently update and render when data changes.
+
+🔑 Key Features
+Component-Based Architecture: UI is broken into small, reusable pieces.
+
+Virtual DOM: Improves performance by minimizing direct DOM manipulation.
+
+Declarative Syntax: You describe what the UI should look like, React handles updates.
+
+Unidirectional Data Flow: Data flows from parent to child components.
+
+JSX (JavaScript XML): Syntax extension that allows writing HTML-like code inside JavaScript.
+
+Hooks: Functions like useState, useEffect, and useContext enable state and lifecycle management in functional components.
+
+React Router: Handles navigation in SPAs.
+
+State Management: Local state (via hooks) or global state (via Redux, Context API).
+
+Ecosystem: Rich ecosystem with tools like Next.js for SSR, React Native for mobile apps.
+
+⚡ Advantages
+Fast rendering with Virtual DOM.
+
+Reusable components reduce development time.
+
+Strong community and ecosystem.
+
+Easy integration with other libraries/frameworks.
+
+🎯 20 React Interview Q&A
+Basics
+What is React?  
+React is a JavaScript library for building user interfaces. It allows developers to create reusable components and efficiently update the DOM using a virtual DOM.
+
+What is JSX?  
+JSX is a syntax extension that looks like HTML but is written inside JavaScript. It makes code more readable and allows mixing UI with logic.
+
+What is the Virtual DOM?  
+The Virtual DOM is a lightweight copy of the real DOM. React updates the Virtual DOM first, then efficiently syncs changes with the real DOM, improving performance.
+
+Difference between functional and class components?
+
+Class components use lifecycle methods and this.state.
+
+Functional components are simpler and use hooks (useState, useEffect) for state and lifecycle.
+
+What are props in React?  
+Props are inputs passed from parent to child components. They are immutable and help make components reusable.
+
+State & Lifecycle
+What is state in React?  
+State is a built-in object that stores dynamic data in a component. It can change over time and trigger re-renders.
+
+Difference between state and props?
+
+Props: Passed from parent, immutable.
+
+State: Managed within the component, mutable.
+
+Explain React Hooks.  
+Hooks are functions that let you use state and lifecycle features in functional components. Examples: useState, useEffect, useContext.
+
+What is useEffect used for?  
+useEffect handles side effects like data fetching, subscriptions, or DOM manipulation after render.
+
+What is lifting state up?  
+Moving state to a common parent component so multiple child components can share and synchronize data.
+
+Advanced Concepts
+What is React Router?  
+A library for handling navigation in React apps. It enables routing without full page reloads.
+
+What is Redux?  
+Redux is a state management library that provides a single source of truth for application state, using actions and reducers.
+
+Difference between Context API and Redux?
+
+Context API: Simple, built-in, good for small apps.
+
+Redux: More powerful, suited for large apps with complex state.
+
+What are controlled vs uncontrolled components?
+
+Controlled: Form inputs managed by React state.
+
+Uncontrolled: Form inputs managed by the DOM itself.
+
+What is reconciliation in React?  
+The process React uses to compare the Virtual DOM with the previous version and update only the changed parts in the real DOM.
+
+Performance & Optimization
+How to optimize performance in React?
+
+Use React.memo for memoization.
+
+Lazy load components.
+
+Avoid unnecessary re-renders.
+
+Use keys in lists.
+
+Optimize state management.
+
+What are keys in React lists?  
+Keys are unique identifiers for list items. They help React track changes and update efficiently.
+
+What is code splitting in React?  
+Breaking code into smaller bundles using tools like React.lazy and Suspense to improve load times.
+
+What is server-side rendering (SSR) in React?  
+Rendering React components on the server before sending HTML to the client. Improves SEO and initial load performance.
+
+Difference between React and Angular?
+
+React: Library, focuses on UI, uses Virtual DOM.
+
+Angular: Full framework, includes routing, state, and more, uses real DOM with optimizations.
