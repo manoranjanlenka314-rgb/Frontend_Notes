@@ -1,0 +1,236 @@
+1. What is a Web API in ASP.NET MVC?
+Answer:  
+A Web API is a framework for building HTTP services that can be consumed by a broad range of clients, including browsers, mobile apps, and IoT devices. Unlike traditional MVC controllers that return views, Web API controllers return raw data (usually JSON or XML). For example, if you want to expose your application’s data to Angular or React, you’d use Web API endpoints. It’s lightweight, stateless, and ideal for RESTful services.
+
+2. How is Web API different from MVC controllers?
+Answer:
+
+MVC Controller: Returns views (HTML + CSS + JS).
+
+Web API Controller: Returns data (JSON/XML).
+
+Routing: MVC uses routes.MapRoute, Web API uses routes.MapHttpRoute.
+
+Use Case: MVC is for web pages, Web API is for services.
+In interviews, emphasize that Web API is optimized for RESTful services, while MVC is optimized for rendering UI.
+
+3. What are the advantages of using Web API over WCF?
+Answer:
+
+Web API is simpler and REST-based, while WCF supports SOAP, TCP, MSMQ.
+
+Web API uses HTTP verbs naturally (GET, POST, PUT, DELETE).
+
+Easier to consume in browsers and mobile apps.
+
+Lightweight compared to WCF.
+If asked, say: “For modern web and mobile apps, Web API is preferred because it’s simpler and more aligned with REST.”
+
+4. Explain REST principles in Web API.
+Answer:  
+REST stands for Representational State Transfer. Key principles:
+
+Stateless: Each request is independent.
+
+Resource-based: Everything is treated as a resource (e.g., /api/products).
+
+HTTP verbs: GET (read), POST (create), PUT (update), DELETE (remove).
+
+Uniform interface: Consistent way of accessing resources.
+Example: GET /api/employees/1 returns employee with ID 1.
+
+5. How do you configure Web API routing in ASP.NET MVC?
+Answer:  
+Web API uses attribute routing and convention-based routing.
+
+Convention-based: Defined in WebApiConfig.cs using routes.MapHttpRoute.
+
+Attribute routing: [Route("api/products/{id}")].
+Attribute routing is more flexible and recommended for complex APIs.
+
+6. What is the role of ApiController in Web API?
+Answer:  
+ApiController is the base class for Web API controllers. It provides:
+
+Automatic model binding.
+
+Built-in support for HTTP response codes.
+
+Methods like Ok(), NotFound(), BadRequest().
+It simplifies returning proper HTTP responses.
+
+7. How does Web API handle content negotiation?
+Answer:  
+Content negotiation decides whether the response should be JSON, XML, or another format.
+
+The client sends Accept headers (e.g., Accept: application/json).
+
+Web API checks available formatters (JsonMediaTypeFormatter, XmlMediaTypeFormatter).
+
+Returns the best match.
+This makes APIs flexible for different clients.
+
+8. How do you secure a Web API?
+Answer:
+
+Authentication: Basic, Token-based, OAuth, JWT.
+
+Authorization: Role-based or claims-based.
+
+HTTPS: Encrypts communication.
+
+CORS: Controls cross-domain requests.
+Example: Using JWT tokens ensures only authenticated users can access endpoints.
+
+9. What is the difference between IHttpActionResult and HttpResponseMessage?
+Answer:
+
+HttpResponseMessage: Gives full control over the HTTP response.
+
+IHttpActionResult: Simplifies response creation with helper methods like Ok(), BadRequest().
+Best practice: Use IHttpActionResult for cleaner code.
+
+10. How do you implement dependency injection in Web API?
+Answer:  
+You can use frameworks like Unity, Autofac, or Ninject.
+
+Register services in WebApiConfig.
+
+Inject them into controllers via constructor injection.
+This improves testability and decouples logic.
+
+11. Explain model binding in Web API.
+Answer:  
+Model binding maps HTTP request data (query string, route data, body) to method parameters.
+Example:
+
+csharp
+public IHttpActionResult PostEmployee(Employee emp)
+Here, JSON body is automatically mapped to the Employee object.
+
+12. How do you handle exceptions in Web API?
+Answer:
+
+Use try-catch blocks.
+
+Global exception handling via ExceptionFilterAttribute.
+
+Return proper HTTP codes (500 Internal Server Error).
+Best practice: Implement a global exception filter for consistency.
+
+13. What is CORS in Web API?
+Answer:  
+CORS (Cross-Origin Resource Sharing) allows requests from different domains.
+Example: Angular app hosted at localhost:4200 calling API at localhost:5000.
+Enable CORS using:
+
+csharp
+config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+14. How do you implement versioning in Web API?
+Answer:
+
+URI versioning: /api/v1/products.
+
+Query string versioning: /api/products?version=1.
+
+Header versioning: Accept: application/json; version=1.
+Versioning ensures backward compatibility.
+
+15. How do you test Web API endpoints?
+Answer:
+
+Tools: Postman, Swagger, Fiddler.
+
+Unit tests using HttpClient.
+
+Integration tests with frameworks like NUnit or xUnit.
+Example: Use Postman to send GET /api/products and verify JSON response.
+
+16. What is the difference between GET and POST in Web API?
+Answer:
+
+GET: Retrieves data, idempotent.
+
+POST: Creates new data, not idempotent.
+Example: GET /api/products returns all products, POST /api/products adds a new product.
+
+17. How do you implement pagination in Web API?
+Answer:  
+Use query parameters:
+GET /api/products?page=2&pageSize=10.
+Return metadata like total count.
+This improves performance for large datasets.
+
+18. How do you implement filtering and sorting in Web API?
+Answer:  
+Use query parameters:
+GET /api/products?sortBy=price&filter=category=Electronics.
+Apply LINQ queries in the repository layer.
+
+19. How do you return custom HTTP status codes?
+Answer:  
+Use HttpResponseMessage or IHttpActionResult.
+Example:
+
+csharp
+return ResponseMessage(Request.CreateResponse(HttpStatusCode.Created));
+20. How do you implement authentication in Web API?
+Answer:
+
+Basic Authentication: Username/password in headers.
+
+Token Authentication: JWT tokens.
+
+OAuth2: Industry standard for secure APIs.
+JWT is most common in modern apps.
+
+21. How do you enable HTTPS in Web API?
+Answer:
+
+Configure SSL certificate in IIS.
+
+Force HTTPS using filters.
+Example:
+
+csharp
+[RequireHttps]
+public class SecureController : ApiController { }
+22. How do you implement caching in Web API?
+Answer:
+
+Use [OutputCache] attribute.
+
+Client-side caching via headers (Cache-Control).
+
+Server-side caching using Redis or MemoryCache.
+Caching improves performance and reduces server load.
+
+23. How do you handle large file uploads in Web API?
+Answer:
+
+Use MultipartFormDataStreamProvider.
+
+Configure max request size in web.config.
+
+Stream files instead of loading into memory.
+This prevents memory overflow.
+
+24. How do you document Web API?
+Answer:
+
+Use Swagger (Swashbuckle).
+
+Provides interactive UI for testing endpoints.
+
+Auto-generates documentation from XML comments.
+This is a must-have for professional APIs.
+
+25. How do you deploy Web API?
+Answer:
+
+Host in IIS.
+
+Self-host using OWIN.
+
+Deploy to Azure App Service.
+Best practice: Use IIS for enterprise apps, Azure for cloud scalability.
