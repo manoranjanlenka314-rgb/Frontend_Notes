@@ -1,0 +1,145 @@
+🌐 Web API Methods in .NET
+In ASP.NET Web API, the framework maps HTTP verbs to controller methods:
+
+HTTP Verb	Method in Web API	Purpose
+GET	Get()	Retrieve data (read-only).
+POST	Post()	Create new resource.
+PUT	Put()	Update existing resource (replace).
+PATCH	Patch()	Partially update resource.
+DELETE	Delete()	Remove resource.
+OPTIONS	Options()	Return allowed HTTP methods for resource.
+HEAD	Head()	Return metadata (headers only, no body).
+
+
+👉 These methods are defined inside ApiController classes, and routing decides which one gets called.
+
+🎯 20 Interview Q&A (Web API in .NET)
+1. Q: What is ASP.NET Web API?
+A: ASP.NET Web API is a framework for building HTTP services that can be consumed by a broad range of clients (browsers, mobile apps, IoT). It supports RESTful architecture and is lightweight compared to WCF.
+
+2. Q: Difference between Web API and MVC Controller?
+A:
+
+MVC Controller returns Views (HTML) for UI.
+
+Web API Controller returns data (JSON/XML) for clients.
+
+Web API is optimized for RESTful services, while MVC is for web applications.
+
+3. Q: Which HTTP methods are supported in Web API?
+A: GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD. These map directly to CRUD operations.
+
+4. Q: How does Web API routing work?
+A: Routing decides which controller and action method to call. Two types:
+
+Convention-based routing (WebApiConfig.cs)
+
+Attribute routing ([Route("api/products/{id}")])
+
+5. Q: Difference between PUT and PATCH?
+A:
+
+PUT replaces the entire resource.
+
+PATCH updates only specific fields.
+Example: Updating a user’s email → PATCH; replacing full user object → PUT.
+
+6. Q: How do you secure a Web API?
+A:
+
+Authentication (JWT, OAuth, Basic Auth).
+
+Authorization (role-based, claims-based).
+
+HTTPS for transport security.
+
+Input validation & anti-CSRF measures.
+
+7. Q: What is content negotiation in Web API?
+A: It’s the process where the server decides the response format (JSON, XML) based on client request headers (Accept header).
+
+8. Q: How do you return JSON from Web API?
+A: By default, Web API uses JSON formatter. You can explicitly return JSON using return Json(object); or configure formatters in WebApiConfig.
+
+9. Q: What is dependency injection in Web API?
+A: DI allows injecting services (like repositories, loggers) into controllers. Improves testability and reduces tight coupling.
+
+10. Q: How do you handle exceptions in Web API?
+A:
+
+Global exception handling (ExceptionHandler).
+
+Filters ([HandleError]).
+
+Custom middleware for logging and error responses.
+
+11. Q: Difference between Web API and WCF?
+A:
+
+Web API: REST, lightweight, supports JSON/XML, simple HTTP.
+
+WCF: SOAP, heavy, supports multiple protocols (TCP, MSMQ).
+Web API is better for modern RESTful services.
+
+12. Q: How do you implement versioning in Web API?
+A:
+
+URI versioning (api/v1/products).
+
+Query string (?version=1).
+
+Header-based (Accept: application/vnd.myapi.v1+json).
+
+13. Q: What is the role of ApiController?
+A: It’s the base class for Web API controllers. Provides methods like Ok(), BadRequest(), NotFound() for standardized HTTP responses.
+
+14. Q: How do you test Web API endpoints?
+A:
+
+Tools: Postman, Swagger UI, curl.
+
+Unit testing with HttpClient.
+
+Integration testing with mock servers.
+
+15. Q: What is CORS in Web API?
+A: Cross-Origin Resource Sharing allows requests from different domains. Enabled via EnableCors attribute or middleware.
+
+16. Q: How do you implement authentication in Web API?
+A:
+
+Token-based (JWT).
+
+OAuth 2.0.
+
+ASP.NET Identity.
+
+Custom authentication handlers.
+
+17. Q: What is the difference between synchronous and asynchronous Web API methods?
+A:
+
+Sync: Blocks thread until operation completes.
+
+Async (async/await): Frees thread, improves scalability for I/O-bound operations.
+
+18. Q: How do you return custom HTTP status codes?
+A: Use HttpResponseMessage or helper methods:
+
+csharp
+return StatusCode(HttpStatusCode.Created);
+return BadRequest("Invalid data");
+19. Q: What is Swagger in Web API?
+A: Swagger (OpenAPI) is a tool for documenting APIs. Provides interactive UI to test endpoints and auto-generates API docs.
+
+20. Q: How do you improve Web API performance?
+A:
+
+Enable caching.
+
+Use async methods.
+
+Optimize database queries.
+
+Minimize payload size (compression).
+
