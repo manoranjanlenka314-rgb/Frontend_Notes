@@ -1,0 +1,84 @@
+React is a JavaScript library developed by Facebook for building user interfaces, especially single-page applications (SPAs). It uses a component-based architecture, meaning the UI is broken into reusable pieces.
+
+Key concepts:
+
+JSX → JavaScript + HTML syntax for writing UI.
+
+Components → Functional or class-based building blocks.
+
+Virtual DOM → Efficiently updates only what’s changed, improving performance.
+
+Props → Pass data from parent to child components.
+
+State → Internal data management within components.
+
+Hooks → Functions like useState, useEffect for managing state and lifecycle in functional components.
+
+Unidirectional Data Flow → Data flows downward, making apps predictable.
+
+React Router → Handles navigation in SPAs.
+
+Context API / Redux → For global state management.
+
+React is popular because it’s fast, scalable, and developer-friendly, powering apps like Facebook, Instagram, and Netflix.
+
+🔹 20 Quick React Interview Q&A
+Q: What is React?
+A: A JavaScript library for building UI with a component-based architecture.
+
+Q: Difference between Virtual DOM and Real DOM?
+A: Virtual DOM is a lightweight copy used by React to update only changed parts, making rendering faster.
+
+Q: What are components in React?
+A: Reusable building blocks of UI, either functional or class-based.
+
+Q: What is JSX?
+A: A syntax extension that lets you write HTML inside JavaScript.
+
+Q: Difference between Props and State?
+A: Props are immutable and passed from parent to child; State is mutable and managed within a component.
+
+Q: What are Hooks in React?
+A: Functions like useState, useEffect that let functional components use state and lifecycle features.
+
+Q: Explain useState.
+A: A Hook that lets you add and manage state in functional components.
+
+Q: Explain useEffect.
+A: A Hook for side effects like API calls, subscriptions, or DOM updates.
+
+Q: What is React Router?
+A: A library for handling navigation and routing in React apps.
+
+Q: What is the Context API?
+A: A way to share global data across components without prop drilling.
+
+Q: Difference between controlled and uncontrolled components?
+A: Controlled components are managed by React state; uncontrolled components rely on the DOM.
+
+Q: What is Redux?
+A: A state management library that uses a single store and actions to manage app state.
+
+Q: What is the purpose of keys in React lists?
+A: Keys help React identify which items changed, improving rendering efficiency.
+
+Q: What is React Fiber?
+A: The new reconciliation engine in React for faster rendering and better scheduling.
+
+Q: What is the difference between class and functional components?
+A: Class components use lifecycle methods; functional components use Hooks.
+
+Q: What is prop drilling?
+A: Passing props through multiple layers of components unnecessarily.
+
+Q: How do you optimize performance in React?
+A: Using memoization (React.memo, useMemo), lazy loading, and avoiding unnecessary re-renders.
+
+Q: What is lazy loading in React?
+A: Loading components only when needed to improve performance.
+
+Q: What is reconciliation in React?
+A: The process React uses to update the DOM efficiently by comparing Virtual DOM with Real DOM.
+
+Q: Why is React popular?
+A: Because it’s fast, scalable, has a huge ecosystem, and simplifies UI development.
