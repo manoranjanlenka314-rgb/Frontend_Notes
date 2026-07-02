@@ -1,0 +1,116 @@
+JavaScript is a high-level, interpreted programming language primarily used for web development. It enables dynamic behavior in web pages, allowing developers to manipulate the DOM, handle events, and interact with APIs.
+
+Key Features:
+Dynamic typing: Variables don’t require explicit type declarations.
+
+Prototype-based OOP: Objects inherit directly from other objects.
+
+Event-driven: Commonly used for handling user interactions.
+
+Asynchronous programming: Supports callbacks, promises, and async/await.
+
+Runs in browsers & servers: With Node.js, JavaScript is used for backend development.
+
+Core Concepts:
+Variables: Declared using var, let, const.
+
+Functions: First-class citizens; can be passed as arguments.
+
+Objects & Arrays: Fundamental data structures.
+
+Closures: Functions that capture variables from their lexical scope.
+
+ES6+ Features: Arrow functions, template literals, modules, destructuring.
+
+Event Loop: Manages asynchronous tasks via call stack, queue, and microtasks.
+
+🎯 20 Main Interview Q&A
+Basics
+Q: Difference between var, let, and const?  
+A: var is function-scoped and allows redeclaration. let is block-scoped and cannot be redeclared. const is block-scoped and immutable (though objects/arrays can still be modified).
+
+Q: What is hoisting in JavaScript?  
+A: Hoisting moves variable and function declarations to the top of their scope. Variables declared with var are hoisted but initialized as undefined; let and const are hoisted but not initialized.
+
+Q: Explain JavaScript data types.  
+A: Two categories:
+
+Primitive: string, number, boolean, null, undefined, symbol, bigint.
+
+Reference: objects, arrays, functions.
+
+Q: What is the difference between == and ===?  
+A: == checks for value equality with type coercion, while === checks for strict equality (value + type).
+
+Functions & Scope
+Q: What are closures?  
+A: A closure is a function that retains access to variables from its lexical scope even after the outer function has executed.
+
+Q: Difference between function declaration and function expression?  
+A: Declarations are hoisted and can be called before they appear in code. Expressions are not hoisted and must be defined before use.
+
+Q: What is the difference between synchronous and asynchronous code?  
+A: Synchronous code executes line by line, blocking further execution. Asynchronous code allows tasks to run in the background (e.g., API calls, timers).
+
+Objects & OOP
+Q: How does prototypal inheritance work?  
+A: Objects inherit properties and methods from other objects via the prototype chain.
+
+Q: Difference between call(), apply(), and bind()?  
+A:
+
+call() invokes a function with arguments passed individually.
+
+apply() invokes with arguments as an array.
+
+bind() returns a new function with a fixed this.
+
+Q: What is this in JavaScript?  
+A: this refers to the object that is executing the current function. Its value depends on how the function is called.
+
+Advanced Concepts
+Q: Explain the Event Loop.  
+A: The event loop manages execution of synchronous code in the call stack and asynchronous tasks in the callback/microtask queue.
+
+Q: What are promises?  
+A: Promises represent the eventual completion or failure of an asynchronous operation. States: pending, fulfilled, rejected.
+
+Q: Difference between async/await and promises?  
+A: async/await is syntactic sugar over promises, making asynchronous code look synchronous and easier to read.
+
+Q: What is the difference between null and undefined?  
+A: null is an intentional absence of value, while undefined means a variable has been declared but not assigned.
+
+Q: What are arrow functions and their limitations?  
+A: Arrow functions provide concise syntax and lexically bind this. They cannot be used as constructors and don’t have their own arguments object.
+
+DOM & Browser
+Q: How do you manipulate the DOM in JavaScript?  
+A: Using methods like getElementById, querySelector, appendChild, removeChild, innerHTML, and event listeners.
+
+Q: Difference between localStorage, sessionStorage, and cookies?  
+A:
+
+localStorage: Stores data permanently until cleared.
+
+sessionStorage: Stores data for the session only.
+
+cookies: Small data stored with expiration, sent with HTTP requests.
+
+Performance & Security
+Q: What is debouncing and throttling?  
+A:
+
+Debouncing: Delays execution until after a pause in events.
+
+Throttling: Ensures a function executes at most once in a given time frame.
+
+Q: How do you prevent XSS in JavaScript?  
+A: By sanitizing user input, using innerText instead of innerHTML, and applying Content Security Policy (CSP).
+
+Q: What is the difference between deep copy and shallow copy?  
+A:
+
+Shallow copy: Copies only references of nested objects.
+
+Deep copy: Creates a completely independent copy of all nested objects.
