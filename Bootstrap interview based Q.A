@@ -1,0 +1,88 @@
+Bootstrap is a popular open-source front-end framework developed by Twitter. It provides a collection of CSS, JavaScript, and HTML components that simplify the process of building responsive, mobile-first web applications.
+
+🔑 Key Features
+Responsive Grid System: Built on a 12-column layout, enabling flexible design across devices.
+
+Predefined CSS Classes: For typography, buttons, forms, tables, and navigation.
+
+Reusable Components: Modals, dropdowns, carousels, alerts, badges, progress bars.
+
+JavaScript Plugins: Interactive features like tooltips, popovers, collapsible menus.
+
+Customization: Can be tailored using Sass variables or by overriding default styles.
+
+Cross-browser Compatibility: Works consistently across modern browsers.
+
+⚡ Advantages
+Rapid development with minimal custom CSS.
+
+Consistent design language across projects.
+
+Strong community support and documentation.
+
+Easy integration with frameworks like Angular, React, and ASP.NET MVC.
+
+🎯 20 Bootstrap Interview Questions & Answers
+Basics
+What is Bootstrap?  
+Bootstrap is a front-end framework that provides pre-styled components and a responsive grid system to speed up web development.
+
+Why is Bootstrap called mobile-first?  
+Its grid system and components are designed to adapt to smaller screens first, then scale up for larger devices.
+
+Explain the Bootstrap Grid System.  
+It uses a 12-column layout with classes like .col-sm-6, .col-md-4, allowing responsive design by defining column widths per device size.
+
+Difference between Bootstrap 4 and Bootstrap 5?  
+Bootstrap 5 dropped jQuery dependency, introduced enhanced grid system, utilities API, and improved form controls.
+
+What are breakpoints in Bootstrap?  
+Predefined screen sizes (sm, md, lg, xl, xxl) that control responsive behavior.
+
+Components
+How do you create a responsive navbar in Bootstrap?  
+Use .navbar, .navbar-expand-lg, and .navbar-light/dark classes with .collapse for toggling on smaller screens.
+
+What is the purpose of the .container class?  
+It centers content and provides responsive padding. Variants: .container-fluid (full width) and .container-{breakpoint}.
+
+Explain Bootstrap buttons.  
+Classes like .btn, .btn-primary, .btn-outline-success provide consistent button styles.
+
+How do you implement a modal in Bootstrap?  
+Use .modal structure with .modal-dialog and .modal-content. Trigger via data-bs-toggle="modal".
+
+What is a Jumbotron in Bootstrap?  
+A large content block for showcasing key information. (Deprecated in Bootstrap 5, replaced by utilities.)
+
+Utilities & Customization
+What are Bootstrap utility classes?  
+Predefined classes for spacing (.m-3, .p-2), text alignment (.text-center), display (.d-flex), etc.
+
+How do you override Bootstrap styles?  
+By writing custom CSS after Bootstrap’s stylesheet or using Sass variables.
+
+Explain the difference between .d-none and .invisible.  
+.d-none removes the element from layout, .invisible hides it but keeps space reserved.
+
+How do you align items using Flexbox utilities in Bootstrap?  
+Classes like .d-flex, .justify-content-center, .align-items-start.
+
+What is the difference between .container and .container-fluid?  
+.container has fixed width at breakpoints, .container-fluid spans full width always.
+
+Advanced
+How do you create a responsive table in Bootstrap?  
+Wrap table in .table-responsive to enable horizontal scrolling on smaller devices.
+
+Explain Bootstrap’s form validation classes.  
+Classes like .is-valid, .is-invalid provide instant feedback styling for form controls.
+
+What is the role of Bootstrap’s JavaScript plugins?  
+They add interactivity (modals, tooltips, carousels) using vanilla JS in Bootstrap 5.
+
+How do you use Bootstrap with React or Angular?  
+By importing Bootstrap CSS/JS or using libraries like react-bootstrap and ng-bootstrap.
+
+What are Bootstrap Icons?  
+A separate icon library introduced in Bootstrap 5, providing scalable vector icons.
