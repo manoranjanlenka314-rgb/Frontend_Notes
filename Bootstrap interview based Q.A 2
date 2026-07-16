@@ -1,0 +1,88 @@
+Bootstrap is a widely used open-source front-end framework originally developed by Twitter. It provides a set of CSS, JavaScript, and HTML components that make building responsive, mobile-first websites faster and easier.
+
+🔑 Key Features
+Responsive Grid System: Built on a 12-column layout for flexible design.
+
+Predefined CSS Classes: For typography, buttons, forms, tables, and navigation.
+
+Reusable Components: Modals, dropdowns, carousels, alerts, badges, progress bars.
+
+JavaScript Plugins: Tooltips, popovers, collapsible menus, carousels.
+
+Customization: Modify via Sass variables or override styles.
+
+Cross-browser Compatibility: Works consistently across modern browsers.
+
+⚡ Advantages
+Rapid development with minimal custom CSS.
+
+Consistent design language across projects.
+
+Strong community support and documentation.
+
+Easy integration with frameworks like Angular, React, and ASP.NET MVC.
+
+🎯 20 Bootstrap Interview Questions & Answers
+Basics
+What is Bootstrap?  
+A front-end framework providing pre-styled components and a responsive grid system to speed up web development.
+
+Why is Bootstrap mobile-first?  
+It designs for small screens first, then scales up for larger devices.
+
+Explain the Bootstrap Grid System.  
+A 12-column layout with classes like .col-sm-6, .col-md-4 for responsive design.
+
+Difference between Bootstrap 4 and Bootstrap 5?  
+Bootstrap 5 removed jQuery, added enhanced grid system, utilities API, and improved forms.
+
+What are breakpoints in Bootstrap?  
+Predefined screen sizes (sm, md, lg, xl, xxl) controlling responsive behavior.
+
+Components
+How do you create a responsive navbar?  
+Use .navbar, .navbar-expand-lg, .navbar-light/dark with .collapse for toggling.
+
+Purpose of the .container class?  
+Centers content with responsive padding. Variants: .container-fluid (full width).
+
+Explain Bootstrap buttons.  
+Classes like .btn, .btn-primary, .btn-outline-success provide consistent styles.
+
+How do you implement a modal?  
+Use .modal, .modal-dialog, .modal-content. Trigger via data-bs-toggle="modal".
+
+What is a Jumbotron?  
+A large block for showcasing info (deprecated in Bootstrap 5, replaced by utilities).
+
+Utilities & Customization
+What are utility classes?  
+Predefined classes for spacing (.m-3), text alignment (.text-center), display (.d-flex).
+
+How do you override Bootstrap styles?  
+Write custom CSS after Bootstrap’s stylesheet or use Sass variables.
+
+Difference between .d-none and .invisible?  
+.d-none removes element from layout; .invisible hides but keeps space reserved.
+
+How do you align items using Flexbox utilities?  
+Classes like .d-flex, .justify-content-center, .align-items-start.
+
+Difference between .container and .container-fluid?  
+.container has fixed width at breakpoints; .container-fluid spans full width.
+
+Advanced
+How do you create a responsive table?  
+Wrap table in .table-responsive for horizontal scrolling on small devices.
+
+Explain form validation classes.  
+.is-valid, .is-invalid provide instant feedback styling for inputs.
+
+Role of Bootstrap’s JavaScript plugins?  
+Add interactivity (modals, tooltips, carousels) using vanilla JS in Bootstrap 5.
+
+How do you use Bootstrap with React or Angular?  
+Import Bootstrap CSS/JS or use libraries like react-bootstrap and ng-bootstrap.
+
+What are Bootstrap Icons?  
+A separate icon library introduced in Bootstrap 5 with scalable vector icons.
