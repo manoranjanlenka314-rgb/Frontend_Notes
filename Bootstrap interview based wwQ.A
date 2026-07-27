@@ -1,0 +1,90 @@
+ntroduction to Bootstrap
+Bootstrap is a powerful open-source front-end framework originally developed by Twitter. It provides a collection of HTML, CSS, and JavaScript components that make building responsive, mobile-first websites faster and easier.
+
+🔑 Key Features
+Responsive Grid System: Built on a 12-column layout, enabling flexible design across devices.
+
+Predefined CSS Classes: For typography, buttons, forms, tables, and navigation.
+
+Reusable Components: Modals, dropdowns, carousels, alerts, badges, progress bars.
+
+JavaScript Plugins: Interactive features like tooltips, popovers, collapsible menus.
+
+Customization: Can be tailored using Sass variables or by overriding default styles.
+
+Cross-browser Compatibility: Works consistently across modern browsers.
+
+⚡ Advantages
+Rapid development with minimal custom CSS.
+
+Consistent design language across projects.
+
+Strong community support and documentation.
+
+Easy integration with frameworks like Angular, React, and ASP.NET MVC.
+
+🎯 10 Bootstrap Interview Questions & Answers
+1. What is Bootstrap and why is it popular?
+Bootstrap is a front-end framework that simplifies web development by offering pre-styled components and a responsive grid system. It’s popular because it reduces development time, ensures consistency across projects, and supports mobile-first design principles.
+
+2. Explain the Bootstrap Grid System.
+Bootstrap’s grid system is based on a 12-column layout. Developers can divide the screen into columns using classes like .col-sm-6, .col-md-4, etc. These classes define how many columns an element should span depending on the device size. This ensures responsive layouts that adapt seamlessly to different screen sizes.
+
+3. What does mobile-first design mean in Bootstrap?
+Mobile-first means designing for smaller screens first, then progressively enhancing the layout for larger devices. Bootstrap’s grid system and breakpoints (sm, md, lg, xl, xxl) are built with this philosophy, ensuring that websites are optimized for mobile users before scaling up.
+
+4. Difference between Bootstrap 4 and Bootstrap 5.
+Bootstrap 4: Relied on jQuery, had fewer utility classes, and used cards/jumbotrons extensively.
+
+Bootstrap 5: Removed jQuery dependency, introduced enhanced grid system, expanded utility API, improved form controls, and added Bootstrap Icons. This makes Bootstrap 5 lighter and more modern.
+
+5. What are breakpoints in Bootstrap?
+Breakpoints are predefined screen sizes that control responsive behavior. For example:
+
+sm (≥576px)
+
+md (≥768px)
+
+lg (≥992px)
+
+xl (≥1200px)
+
+xxl (≥1400px)
+These allow developers to define different layouts for different devices.
+
+6. How do you create a responsive navbar in Bootstrap?
+A responsive navbar is built using .navbar, .navbar-expand-lg, and .navbar-light/dark classes. The .collapse class ensures the menu collapses into a hamburger icon on smaller screens. Example:
+
+html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Brand</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+7. What is the difference between .container and .container-fluid?
+.container: Provides a fixed-width layout that adapts at breakpoints.
+
+.container-fluid: Always spans the full width of the viewport.
+Use .container for centered content and .container-fluid for full-width layouts.
+
+8. How do you override Bootstrap styles?
+You can override Bootstrap styles by:
+
+Writing custom CSS after Bootstrap’s stylesheet.
+
+Using Sass variables to customize Bootstrap before compiling.
+This ensures your custom styles take precedence over default Bootstrap styles.
+
+9. Explain Bootstrap utility classes.
+Utility classes are predefined classes for quick styling. Examples:
+
+Spacing: .m-3 (margin), .p-2 (padding)
+
+Text alignment: .text-center, .text-end
+
+Display: .d-flex, .d-none  
+They allow developers to apply styles without writing custom CSS.
+
+10. How do you use Bootstrap with React or Angular?
+Bootstrap can be integrated by importing its CSS/JS files. For React, libraries like react-bootstrap provide Bootstrap components as React components. For Angular, ng-bootstrap offers similar integration. This ensures developers can use Bootstrap’s design system within modern frameworks.
