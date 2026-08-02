@@ -1,0 +1,385 @@
+AJAX Summary (ASP.NET MVC)
+What is AJAX?
+
+AJAX (Asynchronous JavaScript and XML) is a technique that allows web pages to communicate with the server without reloading the entire page.
+
+Although AJAX originally stood for Asynchronous JavaScript and XML, today it commonly uses JSON instead of XML because JSON is lightweight and easier to work with.
+
+Without AJAX
+User Clicks Button
+       ↓
+Browser Sends Request
+       ↓
+Server Processes Request
+       ↓
+Entire Page Reloads
+With AJAX
+User Clicks Button
+       ↓
+AJAX Sends Request
+       ↓
+Server Returns Data (JSON)
+       ↓
+Only Required Part Updates
+Why Use AJAX?
+Faster user experience
+No full page refresh
+Reduces server load
+Better performance
+Smooth UI interactions
+Fetch data dynamically
+How AJAX Works
+Browser
+   │
+   │ Click Event
+   ▼
+JavaScript / jQuery AJAX
+   │
+HTTP Request
+   ▼
+MVC Controller
+   │
+Business Logic
+   ▼
+Database
+   │
+JSON Response
+   ▼
+JavaScript Updates HTML
+AJAX Request Types
+Method	Purpose
+GET	Retrieve data
+POST	Insert data
+PUT	Update data
+DELETE	Delete data
+jQuery AJAX Syntax
+$.ajax({
+    url: "/Employee/GetEmployees",
+    type: "GET",
+    success: function(result){
+        console.log(result);
+    },
+    error:function(err){
+        console.log(err);
+    }
+});
+ASP.NET MVC Example
+Model
+public class Employee
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+
+    public string Department { get; set; }
+}
+Controller
+public class EmployeeController : Controller
+{
+    public JsonResult GetEmployees()
+    {
+        List<Employee> employees = new List<Employee>()
+        {
+            new Employee(){ Id=1, Name="John", Department="IT"},
+            new Employee(){ Id=2, Name="David", Department="HR"}
+        };
+
+        return Json(employees, JsonRequestBehavior.AllowGet);
+    }
+}
+View
+<button id="btnLoad">Load Employees</button>
+
+<div id="result"></div>
+
+<script>
+
+$("#btnLoad").click(function(){
+
+    $.ajax({
+
+        url:'/Employee/GetEmployees',
+
+        type:'GET',
+
+        success:function(data){
+
+            var html="";
+
+            $.each(data,function(i,item){
+
+                html += item.Name + "<br>";
+
+            });
+
+            $("#result").html(html);
+
+        }
+
+    });
+
+});
+
+</script>
+Flow
+Button Click
+      ↓
+AJAX Call
+      ↓
+MVC Controller
+      ↓
+Database
+      ↓
+JSON
+      ↓
+Update Div
+20 ASP.NET MVC AJAX Interview Questions & Answers
+1. What is AJAX?
+
+Answer:
+AJAX is a technique used to send and receive data from the server asynchronously without refreshing the whole page.
+
+2. What does AJAX stand for?
+
+Answer:
+
+Asynchronous JavaScript And XML.
+
+Nowadays JSON is used more often than XML.
+
+3. Why do we use AJAX in MVC?
+
+Answer:
+
+Faster page updates
+Better user experience
+Partial page refresh
+Less bandwidth usage
+4. Which HTTP methods are commonly used in AJAX?
+
+Answer:
+
+GET
+POST
+PUT
+DELETE
+
+Example:
+
+type:"GET"
+
+or
+
+type:"POST"
+5. What data format is commonly used with AJAX?
+
+Answer:
+
+JSON.
+
+Example:
+
+{
+   "Id":1,
+   "Name":"John"
+}
+6. How do you return JSON from an MVC controller?
+
+Answer:
+
+return Json(employee, JsonRequestBehavior.AllowGet);
+7. Why is JsonRequestBehavior.AllowGet used?
+
+Answer:
+
+In classic ASP.NET MVC, GET requests returning JSON are blocked by default for security. AllowGet explicitly permits JSON responses to GET requests.
+
+8. What is the difference between GET and POST in AJAX?
+
+Answer:
+
+GET	POST
+Retrieves data	Sends data
+Parameters in URL	Parameters in request body
+Can be cached	Typically not cached
+Used for reading	Used for creating/submitting
+9. How do you send data using AJAX POST?
+
+Answer:
+
+$.ajax({
+
+    url:'/Employee/Add',
+
+    type:'POST',
+
+    data:{
+        Name:'John',
+        Department:'IT'
+    }
+
+});
+10. How do you receive POST data in MVC?
+
+Answer:
+
+[HttpPost]
+public ActionResult Add(Employee emp)
+{
+    return Json(true);
+}
+11. How do you call an MVC action using AJAX?
+
+Answer:
+
+$.ajax({
+
+    url:'/Employee/GetEmployees',
+
+    type:'GET'
+
+});
+12. How do you display AJAX data on the page?
+
+Answer:
+
+$("#result").html(data.Name);
+13. What is the success callback?
+
+Answer:
+
+It executes when the server successfully returns a response.
+
+success:function(data){
+
+}
+14. What is the error callback?
+
+Answer:
+
+It executes if the request fails due to server, network, or other errors.
+
+error:function(error){
+
+}
+15. What is the difference between synchronous and asynchronous requests?
+
+Answer:
+
+Synchronous:
+
+Browser waits for the response.
+UI is blocked.
+
+Asynchronous:
+
+Browser continues working.
+Response is handled later.
+
+AJAX is asynchronous by default.
+
+16. How do you pass parameters to an MVC action using AJAX?
+
+Answer:
+
+$.ajax({
+
+url:'/Employee/Get',
+
+data:{ id:5 }
+
+});
+
+Controller:
+
+public JsonResult Get(int id)
+{
+}
+17. How do you reload only a specific <div> using AJAX?
+
+Answer:
+
+$("#EmployeeDiv").html(result);
+
+Only that <div> is updated, not the entire page.
+
+18. What are the advantages of AJAX?
+
+Answer:
+
+Faster UI
+Better performance
+Reduced server load
+Partial updates
+Improved user experience
+19. What are some common AJAX errors?
+
+Answer:
+
+Incorrect URL
+Controller action not found
+HTTP 404 or 500 errors
+JavaScript syntax errors
+Invalid JSON response
+Missing anti-forgery token for secure POST requests
+20. Explain the complete AJAX flow in ASP.NET MVC.
+
+Answer:
+
+User clicks a button.
+JavaScript triggers an AJAX request.
+Request is sent to the MVC controller.
+Controller processes the request (and may call the database).
+Controller returns JSON or HTML.
+JavaScript receives the response.
+The page updates only the required section without a full refresh.
+Real-Time Example: Search Employees Without Refresh
+Controller
+public JsonResult Search(string name)
+{
+    var employees = db.Employees
+                      .Where(e => e.Name.Contains(name))
+                      .ToList();
+
+    return Json(employees, JsonRequestBehavior.AllowGet);
+}
+View
+<input type="text" id="txtSearch" />
+
+<button id="btnSearch">Search</button>
+
+<div id="result"></div>
+
+<script>
+
+$("#btnSearch").click(function(){
+
+    $.ajax({
+
+        url:'/Employee/Search',
+
+        type:'GET',
+
+        data:{
+            name:$("#txtSearch").val()
+        },
+
+        success:function(data){
+
+            var html="";
+
+            $.each(data,function(i,item){
+
+                html += "<p>" + item.Name + "</p>";
+
+            });
+
+            $("#result").html(html);
+
+        }
+
+    });
+
+});
+
+</script>
