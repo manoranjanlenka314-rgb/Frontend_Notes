@@ -1,0 +1,199 @@
+JavaScript (JS) is a high-level, interpreted programming language primarily used to make web pages interactive. It runs in the browser but can also run on servers via environments like Node.js. It follows the ECMAScript specification and is one of the core technologies of the web alongside HTML and CSS.
+
+Key Features:
+Dynamic typing: Variables don’t need explicit type declarations.
+
+Prototype-based OOP: Objects inherit directly from other objects.
+
+Event-driven: Handles user actions like clicks, typing, or API responses.
+
+Single-threaded with concurrency: Uses the event loop and callback queue for asynchronous operations.
+
+Cross-platform: Runs on all major browsers and server-side environments.
+
+Core Concepts:
+Variables: Declared with var, let, and const.
+
+Data Types: Primitive (string, number, boolean, null, undefined, symbol, bigint) and non-primitive (objects, arrays, functions).
+
+Functions: First-class citizens; can be passed as arguments, returned, or stored in variables.
+
+Scope: Global, function, and block scope.
+
+Closures: Functions that remember variables from their lexical scope.
+
+DOM Manipulation: JS interacts with HTML elements via the Document Object Model.
+
+Events: Handled using listeners (addEventListener).
+
+Asynchronous Programming: Achieved with callbacks, promises, and async/await.
+
+ES6+ Features: Arrow functions, template literals, destructuring, modules, classes, spread/rest operators.
+
+Execution Model:
+JS uses a single-threaded event loop.
+
+The call stack executes synchronous code.
+
+The callback queue and microtask queue handle asynchronous tasks (like promises, setTimeout).
+
+Applications:
+Frontend Development: Interactive UI, animations, form validation.
+
+Backend Development: Using Node.js for APIs and server logic.
+
+Full-stack Development: MERN/MEAN stacks.
+
+Mobile Apps: React Native, Ionic.
+
+Desktop Apps: Electron framework.
+
+🎯 20 Long Interview Q&A on JavaScript
+1. What is JavaScript and why is it important?
+JavaScript is a scripting language used to add interactivity to web pages. It enables dynamic content updates, form validation, animations, and communication with servers via APIs. Without JS, websites would be static and less engaging.
+
+2. Difference between var, let, and const?
+var: Function-scoped, allows redeclaration, hoisted with undefined.
+
+let: Block-scoped, no redeclaration, hoisted but not initialized.
+
+const: Block-scoped, must be initialized, cannot be reassigned (though object properties can still change).
+
+3. Explain JavaScript data types.
+Primitive: string, number, boolean, null, undefined, symbol, bigint.
+
+Non-primitive: objects, arrays, functions.
+Primitives are immutable, while objects are mutable and stored by reference.
+
+4. What are closures in JavaScript?
+A closure is a function that retains access to variables from its lexical scope even after the outer function has executed. Example:
+
+js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+5. Explain the event loop in JavaScript.
+The event loop manages execution of code, handling of events, and execution of asynchronous tasks. It continuously checks the call stack and callback queue. If the stack is empty, it pushes queued tasks for execution.
+
+6. Difference between synchronous and asynchronous code?
+Synchronous: Executes line by line, blocking further execution until complete.
+
+Asynchronous: Allows tasks to run in the background (e.g., API calls, timers) without blocking the main thread.
+
+7. What are promises in JavaScript?
+Promises represent the eventual completion or failure of an asynchronous operation. They have three states: pending, fulfilled, and rejected.
+
+js
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+8. Difference between == and ===?
+==: Loose equality, performs type coercion.
+
+===: Strict equality, checks both value and type.
+
+9. What is hoisting in JavaScript?
+Hoisting is JS’s behavior of moving variable and function declarations to the top of their scope before execution. Example:
+
+js
+console.log(a); // undefined
+var a = 10;
+10. Explain this keyword in JavaScript.
+this refers to the object that is executing the current function. Its value depends on the context:
+
+In global scope: window (browser).
+
+In object method: the object itself.
+
+In arrow functions: inherits from enclosing scope.
+
+11. What are arrow functions?
+Arrow functions provide a shorter syntax and do not bind their own this. Example:
+
+js
+const add = (a, b) => a + b;
+12. Explain prototypes in JavaScript.
+Every JS object has a prototype, which is another object it inherits properties from. This forms the basis of prototype-based inheritance.
+
+13. What is the difference between null and undefined?
+null: Explicitly assigned value representing "no value".
+
+undefined: Default value of uninitialized variables.
+
+14. What are JavaScript modules?
+Modules allow code to be split into reusable files. Using export and import:
+
+js
+// math.js
+export function add(a, b) { return a + b; }
+
+// app.js
+import { add } from './math.js';
+15. Explain async/await.
+async/await is syntactic sugar over promises, making asynchronous code look synchronous.
+
+js
+async function fetchData() {
+  try {
+    const res = await fetch("data.json");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+16. What is DOM manipulation in JavaScript?
+DOM manipulation refers to interacting with HTML elements using JS:
+
+js
+document.getElementById("btn").addEventListener("click", () => {
+  alert("Button clicked!");
+});
+17. Explain event bubbling and capturing.
+Bubbling: Event propagates from child to parent.
+
+Capturing: Event propagates from parent to child.
+Handled via addEventListener with useCapture flag.
+
+18. What are higher-order functions?
+Functions that take other functions as arguments or return them. Example:
+
+js
+function multiply(x) {
+  return function(y) {
+    return x * y;
+  };
+}
+19. Explain difference between call, apply, and bind.
+call: Invokes function with arguments passed individually.
+
+apply: Invokes function with arguments passed as an array.
+
+bind: Returns a new function with this bound to a specific object.
+
+20. What are ES6 features in JavaScript?
+Arrow functions
+
+Template literals
+
+Destructuring
+
+Default parameters
+
+Classes
+
+Modules (import/export)
+
+Spread/rest operators
+
+Promises
+
+let and const
