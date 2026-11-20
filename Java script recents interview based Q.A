@@ -1,0 +1,488 @@
+1. What is JavaScript?
+Answer:
+
+JavaScript is a high-level, interpreted programming language mainly used to make web pages interactive and dynamic.
+
+It can be used for:
+- Form validation.
+- Handling button clicks.
+- DOM manipulation.
+- API calls.
+- Frontend development.
+- Backend development using Node.js.
+Example:
+let name = "Hemon";
+
+console.log("Hello " + name);
+
+
+Output:
+Hello Hemon
+
+
+2. What is the difference between var, let, and const?
+Answer:
+
+These three keywords are used to declare variables in JavaScript.
+Feature	var	let	const
+Scope	Function	Block	Block
+Reassignment	Yes	Yes	No
+Redeclaration	Yes	No	No
+Must initialize immediately	No	No	Yes
+
+Example:
+let age = 22;
+age = 23;
+
+const name = "Hemon";
+
+var city = "Hyderabad";
+
+console.log(age);
+console.log(name);
+console.log(city);
+
+
+3. What is the difference between == and ===?
+Answer:
+- == compares values after type conversion when necessary.
+- === compares both value and data type without type conversion.
+Example:
+console.log(10 == "10");
+console.log(10 === "10");
+
+
+Output:
+true
+false
+
+
+4. What are JavaScript data types?
+Answer:
+
+JavaScript has 7 primitive types:
+1. String
+2. Number
+3. Boolean
+4. Undefined
+5. Null
+6. BigInt
+7. Symbol
+It also has non-primitive types, such as Objects and Arrays.
+
+Example:
+let name = "Hemon";
+let age = 22;
+let isActive = true;
+let address;
+let salary = null;
+
+console.log(typeof name);
+console.log(typeof age);
+console.log(typeof isActive);
+console.log(typeof address);
+
+
+5. What is the difference between null and undefined?
+Answer:
+- undefined: A variable has been declared but has not been assigned a value.
+- null: Represents an intentional absence of a value.
+Example:
+let a;
+let b = null;
+
+console.log(a);
+console.log(b);
+
+
+Output:
+undefined
+null
+
+
+
+Part 2: Loops – Important Interview Questions
+High priority for coding rounds
+6. What are loops in JavaScript?
+Answer:
+
+Loops are used to execute a block of code repeatedly until a specified condition becomes false.
+
+JavaScript supports:
+1. for loop
+2. while loop
+3. do-while loop
+4. for...of loop
+5. for...in loop
+Example:
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+
+Output:
+1
+2
+3
+4
+5
+
+
+7. Print numbers from 1 to 10 using a for loop.
+Answer:
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+
+Explanation:
+- let i = 1: Initialization.
+- i <= 10: Condition.
+- i++: Increment.
+- console.log(i): Prints the current number.
+8. Print even numbers from 1 to 20.
+Answer:
+for (let i = 1; i <= 20; i++) {
+
+    if (i % 2 == 0) {
+        console.log(i);
+    }
+
+}
+
+
+Output:
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+
+
+Logic: The modulus operator % returns the remainder. An even number gives remainder 0 when divided by 2.
+9. Find the sum of numbers from 1 to 10.
+Answer:
+let sum = 0;
+
+for (let i = 1; i <= 10; i++) {
+    sum = sum + i;
+}
+
+console.log(sum);
+
+
+Output:
+55
+
+
+Explanation:
+Iteration	i	sum
+1	1	1
+2	2	3
+3	3	6
+4	4	10
+5	5	15
+...	...	...
+10	10	55
+
+10. Find the factorial of a number.
+Question: Find the factorial of 5.
+
+Answer:
+let n = 5;
+let fact = 1;
+
+for (let i = 1; i <= n; i++) {
+    fact = fact * i;
+}
+
+console.log(fact);
+
+
+Output:
+120
+
+
+Logic:
+\[
+5! = 5 \times 4 \times 3 \times 2 \times 1
+\]
+
+11. Print the multiplication table of 5.
+Answer:
+let n = 5;
+
+for (let i = 1; i <= 10; i++) {
+
+    console.log(n + " x " + i + " = " + (n * i));
+
+}
+
+
+Output:
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+...
+5 x 10 = 50
+
+
+12. Reverse a number using a while loop.
+Question: Reverse 1234.
+
+Answer:
+let n = 1234;
+let reverse = 0;
+
+while (n > 0) {
+
+    let digit = n % 10;
+
+    reverse = reverse * 10 + digit;
+
+    n = Math.floor(n / 10);
+
+}
+
+console.log(reverse);
+
+
+Output:
+4321
+
+
+Understand the logic:
+- n % 10 extracts the last digit.
+- reverse * 10 + digit adds that digit to the reversed number.
+- Math.floor(n / 10) removes the last digit.
+13. Check whether a number is prime or not.
+Question: Check whether 7 is a prime number.
+
+Answer:
+let n = 7;
+let isPrime = true;
+
+if (n <= 1) {
+    isPrime = false;
+}
+
+for (let i = 2; i < n; i++) {
+
+    if (n % i == 0) {
+        isPrime = false;
+        break;
+    }
+
+}
+
+if (isPrime) {
+    console.log("Prime Number");
+}
+else {
+    console.log("Not Prime");
+}
+
+
+Output:
+Prime Number
+
+
+Logic: A prime number is divisible only by 1 and itself.
+14. Print the Fibonacci series.
+Question: Print the first 10 Fibonacci numbers.
+
+Answer:
+let a = 0;
+let b = 1;
+
+for (let i = 1; i <= 10; i++) {
+
+    console.log(a);
+
+    let c = a + b;
+
+    a = b;
+    b = c;
+
+}
+
+
+Output:
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+
+Logic: Each new number is the sum of the previous two numbers.
+15. Print a right-angle star pattern.
+Answer:
+for (let i = 1; i <= 5; i++) {
+
+    let pattern = "";
+
+    for (let j = 1; j <= i; j++) {
+
+        pattern += "*";
+
+    }
+
+    console.log(pattern);
+}
+
+
+Output:
+*
+**
+***
+****
+*****
+
+
+Important interview concept:
+- Outer loop (i) controls rows.
+- Inner loop (j) controls columns.
+- pattern += "*" adds stars to the current row.
+- console.log() moves to the next line.
+This is similar to the nested-loop star patterns you've been practising in C#.
+
+Part 3: Logical Programming Questions
+16. Find the largest of three numbers.
+Answer:
+let a = 10;
+let b = 25;
+let c = 15;
+
+if (a > b && a > c) {
+    console.log(a + " is largest");
+}
+else if (b > a && b > c) {
+    console.log(b + " is largest");
+}
+else {
+    console.log(c + " is largest");
+}
+
+
+Output:
+25 is largest
+
+
+17. Check whether a number is a palindrome.
+Question: Check whether 121 is a palindrome.
+
+Answer:
+let n = 121;
+let original = n;
+let reverse = 0;
+
+while (n > 0) {
+
+    let digit = n % 10;
+
+    reverse = reverse * 10 + digit;
+
+    n = Math.floor(n / 10);
+
+}
+
+if (original === reverse) {
+    console.log("Palindrome");
+}
+else {
+    console.log("Not Palindrome");
+}
+
+
+Output:
+Palindrome
+
+
+Logic: A palindrome number remains the same when reversed.
+18. Count the number of digits in a number.
+Question: Count the digits in 12345.
+
+Answer:
+let n = 12345;
+let count = 0;
+
+while (n > 0) {
+
+    count++;
+
+    n = Math.floor(n / 10);
+
+}
+
+console.log(count);
+
+
+Output:
+5
+
+
+19. Find the sum of digits of a number.
+Question: Find the sum of digits of 1234.
+
+Answer:
+let n = 1234;
+let sum = 0;
+
+while (n > 0) {
+
+    let digit = n % 10;
+
+    sum = sum + digit;
+
+    n = Math.floor(n / 10);
+
+}
+
+console.log(sum);
+
+
+Output:
+10
+
+
+Explanation:
+\[
+1+2+3+4=10
+\]
+
+20. Find duplicate elements in an array.
+Question: Find duplicate values from [10, 20, 30, 20, 40, 10].
+
+Answer:
+let arr = [10, 20, 30, 20, 40, 10];
+
+for (let i = 0; i < arr.length; i++) {
+
+    for (let j = i + 1; j < arr.length; j++) {
+
+        if (arr[i] === arr[j]) {
+
+            console.log(arr[i]);
+
+            break;
+        }
+
+    }
+
+}
+
+
+Output:
+10
+20
